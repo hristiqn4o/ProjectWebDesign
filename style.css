@@ -1,0 +1,1668 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* базов reset */
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{font-family:'DM Sans',sans-serif;background:#f8faff;color:#111;}
+
+a{text-decoration:none;color:inherit;}
+
+ul{list-style:none;}
+
+img{max-width:100%;}
+
+/* навигация */
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:62px;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(26,140,255,0.1);box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+
+.nav-logo{font-size:1.15rem;font-weight:800;color:#0a0a1a; font-family:'DM Sans',sans-serif;font-size:1.2rem;font-weight:800;color:#0a0a1a;}
+
+.nav-logo span{color:#1a8cff;}
+
+.nav-pill{display:flex;align-items:center;background:#f4f6fb;border-radius:50px;padding:5px 6px;gap:2px;border:1px solid #e8eef8;}
+
+.nav-pill a{padding:6px 18px;border-radius:50px;font-size:0.82rem;font-weight:600;color:#555;transition:all .15s;}
+
+.nav-pill a.on{color:#fff;background:#1a8cff;box-shadow:0 2px 8px rgba(26,140,255,.3);}
+
+.nav-pill a:hover:not(.on){color:#1a8cff;background:#e8f1ff;}
+
+.nav-cart{display:flex;align-items:center;gap:8px;background:#0a0a1a;color:#fff;padding:8px 20px;border-radius:50px;font-size:0.82rem;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.2);}
+
+.nav-badge{background:#1a8cff;color:#fff;font-size:.65rem;font-weight:800;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;}
+
+/* toast съобщения */
+
+.toast{position:fixed;bottom:1.75rem;right:1.75rem;background:#1a8cff;color:#fff;font-weight:700;font-size:.85rem;padding:.75rem 1.4rem;border-radius:50px;z-index:9999;transform:translateY(100px);opacity:0;transition:all .3s;pointer-events:none;box-shadow:0 4px 20px rgba(26,140,255,.3);}
+
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* бутони */
+
+.btn-primary{background:linear-gradient(135deg,#1a8cff,#5040e0);color:#fff;padding:13px 30px;border-radius:50px;font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(26,140,255,.35);cursor:pointer;border:none;font-family:'Geist',sans-serif;}
+
+.btn-outline{color:#333;padding:13px 24px;border-radius:50px;font-weight:600;font-size:.92rem;border:1.5px solid #ddd;background:#fff;display:inline-flex;align-items:center;}
+
+/* общи стилове за секциите */
+
+.sec{padding:4.5rem 0;}
+
+.con{max-width:1280px;margin:0 auto;padding:0 2.5rem;}
+
+.sec-title{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:#0a0a1a;letter-spacing:-1px;text-align:center;margin-bottom:.5rem;}
+
+.sec-sub{font-size:.92rem;color:#888;text-align:center;margin-bottom:2.5rem;}
+
+/* footer */
+
+.footer{background:#030308;position:relative;overflow:hidden;}
+
+.footer-top-line{height:1px;background:linear-gradient(90deg,transparent,rgba(26,140,255,0.4),transparent);}
+
+.footer-newsletter{background:linear-gradient(135deg,rgba(26,140,255,0.08),rgba(26,140,255,0.04));border-bottom:1px solid rgba(26,140,255,0.1);padding:2rem 2.5rem;}
+
+.footer-newsletter-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+
+.footer-grid{max-width:1280px;margin:0 auto;padding:5rem 2.5rem 3rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;position:relative;z-index:1;}
+
+.footer-logo-txt{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:1rem;display:block;}
+
+.footer-logo-txt span{color:#1a8cff;}
+
+.footer-col p{color:#3a4a60;font-size:.88rem;line-height:1.8;}
+
+.footer-col h4{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1a8cff;margin-bottom:1.25rem;}
+
+.footer-col ul li{margin-bottom:.6rem; font-size:.85rem;color:#3a4a60;display:flex;gap:8px;align-items:flex-start;}
+
+.footer-col ul li a{font-size:.88rem;color:#3a4a60;transition:color .15s;}
+
+.footer-col ul li a:hover{color:#ccc;}
+
+.footer-social-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:9px 14px;transition:all .15s;margin-bottom:.6rem;}
+
+.footer-social-btn:hover{border-color:rgba(26,140,255,.3);color:#1a8cff;}
+
+.footer-social-btn span{font-size:.82rem;font-weight:600;color:#3a4a60;}
+
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1280px;margin:0 auto;}
+
+.footer-bottom span{font-size:.78rem;color:#1e2a3a;}
+
+.footer-bottom a{font-size:.78rem;color:#1e2a3a;}
+
+/* анимации */
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
+
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* hero секцията на началната страница */
+
+.hero{background:linear-gradient(160deg,#f0f7ff 0%,#e6f0ff 40%,#ede8ff 100%);min-height:calc(100vh - 62px);display:flex;flex-direction:column;}
+
+.hero-blob1{position:absolute;top:-80px;right:8%;width:420px;height:420px;background:radial-gradient(circle,rgba(26,140,255,.13) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+
+.hero-blob2{position:absolute;bottom:0;left:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(96,64,255,.08) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+
+.hero-inner{max-width:1280px;margin:0 auto;padding:1.5rem 2.5rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1; flex:1;align-items:center;}
+
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(26,140,255,0.1);border:1px solid rgba(26,140,255,0.25);border-radius:50px;padding:5px 14px;margin-bottom:1.25rem;}
+
+.hero-tag-dot{width:7px;height:7px;border-radius:50%;background:#1a8cff;box-shadow:0 0 8px #1a8cff;animation:pulse 2s infinite;}
+
+.hero-tag span{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:#1a8cff;text-transform:uppercase;}
+
+.hero-title{font-size:clamp(2.5rem,4.5vw,4rem);font-weight:900;color:#0a0a1a;line-height:1;letter-spacing:-2px;margin-bottom:1rem;}
+
+.hero-title .gradient{background:linear-gradient(135deg,#1a8cff,#6040ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+.hero-subtitle{font-size:.95rem;color:#555;line-height:1.8;margin-bottom:.5rem;}
+
+.hero-sub2{font-size:.88rem;color:#777;margin-bottom:1.5rem;}
+
+.hero-features{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:2rem;}
+
+.hero-feat{display:flex;align-items:center;gap:8px;font-size:.85rem;color:#444;font-weight:500;background:#f0f5ff;border:1px solid #dce8ff;border-radius:50px;padding:7px 14px;}
+
+.hero-feat-icon{color:#1a8cff;font-size:1rem;}
+
+.hero-btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:2rem;}
+
+.hero-social-proof{display:flex;align-items:center;gap:10px;}
+
+.hero-avatars{display:flex;}
+
+.hero-avatar{width:32px;height:32px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
+
+.hero-avatar:first-child{margin-left:0;}
+
+.hero-stars{color:#f5a623;font-size:.85rem;}
+
+.hero-proof-text{font-size:.78rem;color:#777;}
+
+.hero-proof-text strong{color:#333;}
+
+.hero-visual{position:relative;min-height:300px;display:flex;align-items:center;justify-content:center;}
+
+.hero-main-card{background:linear-gradient(135deg,#1a8cff,#5040e0);border-radius:24px;padding:1.75rem;width:200px;text-align:center;box-shadow:0 20px 50px rgba(26,140,255,.35);position:relative;z-index:2;}
+
+.hero-card-emoji{font-size:2.5rem;margin-bottom:.5rem;display:block;}
+
+.hero-card-label{font-size:.65rem;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-bottom:.25rem;}
+
+.hero-card-price{font-size:1.5rem;font-weight:900;color:#fff;}
+
+.hero-float-card{position:absolute;background:#fff;border:1.5px solid #e4ecff;border-radius:16px;padding:.9rem 1.1rem;box-shadow:0 8px 24px rgba(26,140,255,.12);z-index:3;min-width:140px; background:#fff;border-radius:20px;padding:1rem 1.2rem;box-shadow:0 12px 35px rgba(0,0,0,0.12);position:absolute;z-index:3;border:1px solid #eef2ff;}
+
+.hero-float-card.card-tl{top:10px;left:-30px;transform:rotate(-3deg);}
+
+.hero-float-card.card-br{bottom:10px;right:-20px;transform:rotate(2deg);}
+
+.hero-float-brand{font-size:.6rem;font-weight:700;letter-spacing:.1em;color:#1a8cff;text-transform:uppercase;margin-bottom:.2rem;}
+
+.hero-float-name{font-size:.82rem;font-weight:700;color:#0a0a1a;margin-bottom:.4rem;}
+
+.hero-float-price{font-size:1rem;font-weight:800;color:#1a8cff;}
+
+.hero-review-card{position:absolute;top:40%;right:-45px;transform:translateY(-50%) rotate(2deg);background:#0a0a1a;border-radius:14px;padding:.9rem 1.1rem;z-index:4;max-width:170px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+
+.hero-review-stars{color:#f5a623;font-size:.75rem;margin-bottom:.3rem;}
+
+.hero-review-text{font-size:.72rem;color:#ccc;line-height:1.5;margin-bottom:.3rem;}
+
+.hero-review-author{font-size:.68rem;color:#666;}
+
+.hero-sale-badge{position:absolute;top:-14px;left:10px;background:linear-gradient(135deg,#ff6b35,#ff4757);border-radius:50px;padding:6px 16px;box-shadow:0 6px 20px rgba(255,71,87,0.4);transform:rotate(-4deg);z-index:5;}
+
+/* лентата с числата */
+
+.stats-bar{background:linear-gradient(135deg,#0a0a1a 0%,#0d1f3c 100%);position:relative;overflow:hidden;}
+
+.stats-bar-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:1;}
+
+.stat-item{text-align:center;}
+
+.stat-num{font-size:2.2rem;font-weight:900;color:#fff;display:block;line-height:1; font-family:'Geist',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;display:block;margin-bottom:0.3rem;letter-spacing:-1px;}
+
+.stat-num span{color:#1a8cff;}
+
+.stat-lbl{font-size:.68rem;color:#3a5070;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:.25rem;display:block;}
+
+/* мрежата с категориите */
+
+.cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+
+.cat-card{background:#fff;border:1.5px solid #e0eaff;border-radius:20px;padding:1.75rem 1.5rem;text-align:center;text-decoration:none;display:block;transition:all .2s;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(26,140,255,0.07);}
+
+/* продуктовата мрежа на началната страница */
+
+.prods-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
+
+.prod{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;overflow:hidden;transition:all .2s;cursor:pointer;box-shadow:0 4px 16px rgba(26,140,255,0.06);}
+
+.prod:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(26,140,255,.12);border-color:#c0d8ff; border-color:#1a8cff;transform:translateY(-5px);box-shadow:0 16px 40px rgba(26,140,255,0.15);}
+
+.prod-img{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+
+.prod-badge{position:absolute;top:10px;left:10px;font-size:.65rem;font-weight:800;padding:4px 12px;border-radius:50px;color:#fff;letter-spacing:0.04em;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+
+.prod-badge.badge-hot{background:linear-gradient(135deg,#ff6b35,#ff4757);color:#fff;}
+
+.prod-badge.badge-new{background:linear-gradient(135deg,#00c48c,#00a878);color:#fff;}
+
+.prod-badge.badge-sale{background:linear-gradient(135deg,#1a8cff,#5040e0);color:#fff;}
+
+.prod-info{padding:1.1rem 1.25rem;}
+
+.prod-brand{font-size:.68rem;font-weight:700;color:#1a8cff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px;}
+
+.prod-name{font-size:.92rem;font-weight:700;color:#0a0a1a;margin-bottom:.3rem;line-height:1.3; font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#0a0a1a;margin-bottom:.2rem;}
+
+.prod-desc{font-size:.76rem;color:#999;margin-bottom:.75rem;line-height:1.5;}
+
+.prod-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
+
+.prod-price{font-size:1.1rem;font-weight:800;color:#0a0a1a; font-family:'DM Sans',sans-serif;font-size:1.2rem;font-weight:800;color:#0a0a1a;}
+
+.prod-old{font-size:.78rem;color:#ccc;text-decoration:line-through;margin-right:3px;}
+
+.prod-add{background:linear-gradient(135deg,#1a8cff,#6040ff);color:#fff;border:none;border-radius:50px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;box-shadow:0 4px 12px rgba(26,140,255,0.3);}
+
+.prod-add:hover{opacity:.85; transform:scale(1.05);box-shadow:0 6px 18px rgba(26,140,255,0.4);}
+
+/* табовете за филтриране на продуктите */
+
+.tabs{display:flex;justify-content:center;gap:.6rem;margin-bottom:2rem;flex-wrap:wrap;}
+
+.tab{display:inline-flex;align-items:center;gap:6px;padding:8px 20px;border-radius:50px;font-size:.82rem;font-weight:600;border:1.5px solid #e4ecff;color:#666;cursor:pointer;transition:all .15s;background:#fff;}
+
+.tab.on{background:#1a8cff;color:#fff;border-color:#1a8cff;box-shadow:0 4px 14px rgba(26,140,255,.25);}
+
+.tab:hover:not(.on){border-color:#c0d8ff;color:#1a8cff;}
+
+/* промо секцията с таймера */
+
+.promo-sec{background:linear-gradient(135deg,#0a0a1a,#0d1f3c);padding:3.5rem 2.5rem;position:relative;overflow:hidden; position:relative;overflow:hidden;background:linear-gradient(135deg,#0a0a1a 0%,#0d1f3c 50%,#0a0a1a 100%);padding:5rem 0;}
+
+.promo-sec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.06) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;}
+
+.promo-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;padding:0 2.5rem;}
+
+.promo-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(26,140,255,0.1);border:1px solid rgba(26,140,255,0.25);border-radius:50px;padding:5px 14px;margin-bottom:1rem;}
+
+.promo-tag span{font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#1a8cff;text-transform:uppercase;}
+
+.promo-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:.75rem;}
+
+.promo-title span{color:#1a8cff;}
+
+.promo-desc{color:#4a6080;font-size:.9rem;line-height:1.8;margin-bottom:1.25rem; font-size:1rem;color:#6a7fa8;margin-bottom:2rem;line-height:1.7;}
+
+.promo-chips{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem;}
+
+.promo-chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:6px 14px;font-size:0.8rem;font-weight:600;color:#aabbd0;}
+
+.countdown-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:1rem;}
+
+.countdown-label{font-size:.72rem;font-weight:700;letter-spacing:.15em;color:#3a5070;text-transform:uppercase;}
+
+.countdown{display:flex;align-items:center;gap:.75rem;}
+
+.cd-block{background:rgba(255,255,255,0.06);border:1px solid rgba(26,140,255,0.2);border-radius:16px;padding:1.25rem 1.75rem;text-align:center;min-width:90px;backdrop-filter:blur(10px);}
+
+.cd-num{font-size:2.8rem;font-weight:800;color:#fff;display:block;line-height:1;}
+
+.cd-lbl{font-size:0.62rem;color:#4a6080;letter-spacing:.12em;text-transform:uppercase;margin-top:.35rem;display:block;}
+
+.cd-sep{font-size:2rem;font-weight:800;color:#1a8cff;line-height:1;}
+
+.promo-progress-wrap{width:100%;max-width:320px;}
+
+.promo-progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;margin-bottom:.5rem; width:100%;background:rgba(255,255,255,0.06);border-radius:50px;height:6px;overflow:hidden;}
+
+.promo-progress-fill{height:100%;background:linear-gradient(90deg,#1a8cff,#6040ff);border-radius:6px;width:66%; width:68%;height:100%;background:linear-gradient(90deg,#1a8cff,#60b0ff);border-radius:50px;}
+
+.promo-progress-text{font-size:0.78rem;color:#4a6080;font-weight:600;}
+
+/* лентата с марките */
+
+.brands-sec{background:#eef3ff;padding:2rem 2.5rem;}
+
+.brands-sec-inner{max-width:1280px;margin:0 auto;}
+
+.brands-sec h3{text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#999;margin-bottom:1.5rem;}
+
+.brands-row{display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;}
+
+.brand-logo{font-size:1.1rem;font-weight:800;color:#b0bdd0;letter-spacing:.08em;transition:color .15s;}
+
+.brand-logo:hover{color:#1a8cff;}
+
+.brand-logo.own{color:#1a8cff;}
+
+/* секцията с отзивите */
+
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+
+.review-card{background:linear-gradient(135deg,#0d1f3c,#0a1428);border:1px solid rgba(26,140,255,0.15);border-radius:20px;padding:1.75rem;}
+
+.review-stars{color:#f5a623;font-size:.9rem;margin-bottom:.75rem;}
+
+.review-text{color:#8aa8cc;font-size:.88rem;line-height:1.8;margin-bottom:1.25rem;}
+
+.review-author{display:flex;align-items:center;gap:.75rem;}
+
+.review-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#1a8cff,#6040ff);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;}
+
+.review-name{font-size:.88rem;font-weight:700;color:#fff;}
+
+.review-meta{font-size:.72rem;color:#4a6080;}
+
+/* стилове за страницата с каталога */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+/* навигация в каталога */
+
+/* header на каталога */
+
+.page-header{background:linear-gradient(135deg,#060614 0%,#0a1428 55%,#060d20 100%);padding:calc(62px + 2.5rem) 2.5rem 0;position:relative;overflow:hidden;}
+
+.page-header::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+
+.ph-blob2{position:absolute;top:-80px;right:12%;width:560px;height:560px;background:radial-gradient(circle,rgba(26,140,255,0.1) 0%,transparent 60%);border-radius:50%;pointer-events:none;}
+
+.ph-blob3{position:absolute;bottom:-60px;left:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(96,64,255,0.08) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+
+.ph-line{height:1px;background:linear-gradient(90deg,transparent,rgba(26,140,255,0.4),transparent);}
+
+.page-header-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+
+/* горния ред с търсачката */
+
+.ph-breadcrumb-row{padding:1.5rem 0 1.75rem;}
+
+.breadcrumb{display:inline-flex;align-items:center;gap:7px;font-size:0.78rem;color:#8aa8cc;background:rgba(26,140,255,0.08);border:1px solid rgba(26,140,255,0.2);border-radius:50px;padding:6px 16px;}
+
+.breadcrumb a{color:#8aa8cc;transition:color .15s;}
+
+.breadcrumb a:hover{color:#fff;}
+
+.breadcrumb span{color:#4aadff;font-weight:700;}
+
+.breadcrumb-sep{color:#3a5070;}
+
+/* търсачката */
+
+.ph-search-wrap{position:relative;display:flex;align-items:center; margin-top:1.5rem;max-width:520px; background:rgba(255,255,255,0.07); border:1.5px solid rgba(26,140,255,0.25); border-radius:14px;overflow:hidden; transition:border-color .2s, box-shadow .2s; box-shadow:0 4px 24px rgba(26,140,255,0.1);}
+
+.ph-search-wrap:focus-within{border-color:#1a8cff; box-shadow:0 6px 32px rgba(26,140,255,0.22);}
+
+.ph-search-icon{padding:0 4px 0 18px;font-size:1rem;flex-shrink:0;}
+
+.ph-search{flex:1;background:transparent;border:none; padding:14px 16px;color:#fff; font-family:'DM Sans',sans-serif;font-size:0.95rem; outline:none;}
+
+.ph-search::placeholder{color:#4a6888;}
+
+.ph-search-btn{background:linear-gradient(135deg,#1a8cff,#5040e0); color:#fff;border:none;padding:10px 22px; font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:700; cursor:pointer;margin:5px;border-radius:10px; transition:opacity .15s;white-space:nowrap; letter-spacing:0.02em;}
+
+.ph-search-btn:hover{opacity:0.88;}
+
+/* основния ред с sidebar и продукти */
+
+.ph-main{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;margin-bottom:2.5rem;}
+
+.ph-left{min-width:0;}
+
+.ph-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(26,140,255,0.1);border:1px solid rgba(26,140,255,0.25);border-radius:50px;padding:6px 18px;margin-bottom:1.25rem;}
+
+.ph-tag-dot{width:7px;height:7px;border-radius:50%;background:#1a8cff;box-shadow:0 0 8px #1a8cff;animation:pulse 2s infinite;}
+
+.ph-tag span{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;color:#4aadff;text-transform:uppercase;}
+
+/* заглавие */
+
+.ph-title{font-family:'Outfit',sans-serif;font-size:clamp(2.8rem,6vw,4.8rem);font-weight:900;color:#fff;line-height:1.0;letter-spacing:-1px;margin-bottom:1.1rem;}
+
+.ph-title span{background:linear-gradient(120deg,#4aadff 0%,#7060ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+/* подзаглавие */
+
+.ph-subtitle{color:#8aa8cc;font-size:1rem;line-height:1.8;max-width:500px;font-weight:400;}
+
+/* разделителя и статистиките */
+
+.ph-divider{width:52px;height:2px;background:linear-gradient(90deg,#1a8cff,#6040ff);border-radius:2px;margin:1.75rem 0 1.5rem;}
+
+.ph-stats-row{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+
+.ph-stat-item{padding:0 2rem 0 0;}
+
+.ph-stat-n{font-family:'DM Sans',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;display:block;line-height:1;margin-bottom:4px;}
+
+.ph-stat-n.accent{color:#4aadff;}
+
+.ph-stat-l{font-size:0.7rem;color:#6888aa;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;}
+
+.ph-stat-sep{width:1px;height:36px;background:rgba(255,255,255,0.1);margin:0 2rem 0 0;flex-shrink:0;}
+
+/* визуалния елемент */
+
+.ph-right{display:flex;align-items:center;justify-content:center;}
+
+.ph-visual{position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+.ph-vis-ring{position:absolute;border-radius:50%;}
+
+.ph-vis-ring1{width:200px;height:200px;border:1px solid rgba(26,140,255,0.18);animation:spin 22s linear infinite;}
+
+.ph-vis-ring2{width:148px;height:148px;border:1px solid rgba(96,64,255,0.2);animation:spin 15s linear infinite reverse;}
+
+.ph-vis-ring3{width:96px;height:96px;border:1px solid rgba(26,140,255,0.3);animation:spin 9s linear infinite;}
+
+.ph-vis-center{position:relative;z-index:1;display:flex;gap:8px;font-size:1.6rem;filter:drop-shadow(0 0 10px rgba(26,140,255,0.3));}
+
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* chip филтрите */
+
+.ph-chips{display:flex;gap:0.5rem;flex-wrap:wrap;padding:0 0 2rem;}
+
+.ph-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50px;padding:8px 20px;font-size:0.82rem;font-weight:600;color:#6888aa;cursor:pointer;transition:all .18s;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+
+.ph-chip:hover{background:rgba(26,140,255,0.1);border-color:rgba(26,140,255,0.35);color:#aaccee;}
+
+.ph-chip.on{background:rgba(26,140,255,0.16);border-color:#1a8cff;color:#fff;box-shadow:0 2px 16px rgba(26,140,255,0.25);}
+
+.ph-chip.sale-chip{color:#aa6070;}
+
+.ph-chip.sale-chip:hover,.ph-chip.sale-chip.on{background:rgba(255,71,87,0.1);border-color:#ff4757;color:#ff8090;}
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
+
+/* layout на каталога */
+
+.catalog-wrap{max-width:1280px;margin:0 auto;padding:2.5rem;display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start;}
+
+/* страничната лента с филтри */
+
+.sidebar{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;padding:1.75rem;position:sticky;top:calc(62px + 1rem);}
+
+.sidebar-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#0a0a1a;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #eef2ff;display:flex;align-items:center;justify-content:space-between;}
+
+.sidebar-title span{font-size:0.75rem;font-weight:600;color:#1a8cff;cursor:pointer;}
+
+.filter-group{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #f0f4ff;}
+
+.filter-group:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+
+.filter-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:0.85rem;}
+
+.filter-check{display:flex;align-items:center;gap:8px;font-size:0.88rem;color:#444;margin-bottom:0.5rem;cursor:pointer;transition:color .15s;}
+
+.filter-check:hover{color:#1a8cff;}
+
+.filter-check input{accent-color:#1a8cff;width:16px;height:16px;cursor:pointer;}
+
+.cnt{margin-left:auto;font-size:0.72rem;color:#bbb;background:#f4f6fb;border-radius:50px;padding:1px 7px;}
+
+.price-slider{width:100%;accent-color:#1a8cff;margin-bottom:0.5rem;}
+
+.price-range-vals{display:flex;justify-content:space-between;font-size:0.82rem;color:#666;}
+
+.price-range-vals b{color:#1a8cff;}
+
+.apply-btn{width:100%;background:linear-gradient(135deg,#1a8cff,#6040ff);color:#fff;border:none;border-radius:50px;padding:10px;font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;margin-top:1rem;box-shadow:0 4px 14px rgba(26,140,255,0.3);transition:all .2s; letter-spacing:.02em;}
+
+.apply-btn:hover{box-shadow:0 6px 20px rgba(26,140,255,0.4);transform:translateY(-1px);}
+
+/* лентата с инструменти */
+
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;}
+
+.results-count{font-size:0.88rem;color:#888;font-weight:500;}
+
+.results-count b{color:#0a0a1a;}
+
+.sort-wrap{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#555;}
+
+.sort-select{background:#fff;border:1.5px solid #e4ecff;color:#333;padding:7px 14px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:0.85rem;cursor:pointer;outline:none;}
+
+.view-btns{display:flex;gap:4px;}
+
+.view-btn{background:#fff;border:1.5px solid #e4ecff;color:#aaa;width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+
+.view-btn.on{border-color:#1a8cff;color:#1a8cff;background:#eef5ff;}
+
+/* PRODUCT GRID */
+
+.prod:hover .prod-img img{transform:scale(1.05);}
+
+.badge-new{background:#00c48c;}
+
+.badge-sale{background:#ff4757;}
+
+.badge-hot{background:#ff6b35;}
+
+.prod-fav{position:absolute;top:10px;right:10px;width:32px;height:32px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer;opacity:0;transition:opacity .2s;}
+
+.prod:hover .prod-fav{opacity:1;}
+
+.prod-foot{display:flex;align-items:center;justify-content:space-between;}
+
+/* LIST VIEW */
+
+.prods-list{display:flex;flex-direction:column;gap:1rem;}
+
+.prod-list-item{background:#fff;border:1.5px solid #e4ecff;border-radius:16px;overflow:hidden;display:flex;align-items:center;transition:all .2s;cursor:pointer;}
+
+.prod-list-item:hover{border-color:#1a8cff;box-shadow:0 8px 28px rgba(26,140,255,0.12);}
+
+.prod-list-img{width:120px;height:100px;flex-shrink:0;position:relative;overflow:hidden;}
+
+.prod-list-img img{width:100%;height:100%;object-fit:cover;}
+
+.prod-list-info{flex:1;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+
+.prod-list-text{flex:1;min-width:160px;}
+
+.prod-list-price{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:800;color:#0a0a1a;white-space:nowrap;}
+
+.prod-list-old{font-size:.78rem;color:#ccc;text-decoration:line-through;margin-right:3px;}
+
+/* TABLE VIEW */
+
+.table-wrap{overflow-x:auto;border-radius:16px;border:1.5px solid #e4ecff;background:#fff;}
+
+.prod-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+
+.prod-table th{background:#f8faff;padding:.85rem 1.1rem;text-align:left;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;border-bottom:1.5px solid #e4ecff;}
+
+.prod-table td{padding:.85rem 1.1rem;border-bottom:1px solid #f0f4ff;color:#444;vertical-align:middle;}
+
+.prod-table tr:last-child td{border-bottom:none;}
+
+.prod-table tr:hover td{background:#fafbff;}
+
+.td-name{font-family:'Syne',sans-serif;font-weight:700;color:#0a0a1a;font-size:.9rem;}
+
+.td-price{font-family:'DM Sans',sans-serif;font-weight:800;color:#1a8cff;font-size:.95rem;}
+
+.td-stock-in{background:#e0fff4;color:#00a878;border:1px solid #b0e8cc;padding:3px 10px;border-radius:50px;font-size:.7rem;font-weight:700;display:inline-block;}
+
+.td-stock-out{background:#fff0f0;color:#ff4757;border:1px solid #ffc0c0;padding:3px 10px;border-radius:50px;font-size:.7rem;font-weight:700;display:inline-block;}
+
+/* PAGINATION */
+
+.pagination{display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:2.5rem;padding-bottom:1rem;}
+
+.pg-btn{width:38px;height:38px;border-radius:10px;border:1.5px solid #e4ecff;background:#fff;display:flex;align-items:center;justify-content:center;font-size:.88rem;font-weight:600;color:#555;cursor:pointer;transition:all .15s;}
+
+.pg-btn:hover{border-color:#1a8cff;color:#1a8cff;}
+
+.pg-btn.on{background:linear-gradient(135deg,#1a8cff,#6040ff);border-color:#1a8cff;color:#fff;box-shadow:0 4px 12px rgba(26,140,255,.3);}
+
+.pg-dots{color:#ccc;padding:0 4px;}
+
+/* MODAL */
+
+.modal-overlay{position:fixed;inset:0;background:rgba(10,10,26,0.75);backdrop-filter:blur(8px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;visibility:hidden;transition:all .25s;}
+
+.modal-overlay.open{opacity:1;visibility:visible;}
+
+.modal{background:#fff;border-radius:24px;max-width:860px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(30px) scale(0.97);transition:transform .25s;box-shadow:0 30px 80px rgba(0,0,0,0.25);}
+
+.modal-overlay.open .modal{transform:translateY(0) scale(1);}
+
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border-radius:50%;background:#f4f6fb;border:none;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:all .15s;color:#555;}
+
+.modal-close:hover{background:#ff4757;color:#fff;}
+
+.modal-inner{display:grid;grid-template-columns:1fr 1fr;min-height:420px;}
+
+.modal-img-wrap{border-radius:24px 0 0 24px;overflow:hidden;position:relative;background:linear-gradient(135deg,#f0f4fa,#e8f0ff);min-height:380px;}
+
+.modal-img-wrap img{width:100%;height:100%;object-fit:cover;}
+
+.modal-badge{position:absolute;top:1rem;left:1rem;font-size:.7rem;font-weight:800;padding:5px 14px;border-radius:50px;color:#fff;letter-spacing:0.05em;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+
+.modal-body{padding:2.25rem 2rem;display:flex;flex-direction:column;}
+
+.modal-brand{font-size:.72rem;font-weight:700;color:#1a8cff;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem;}
+
+.modal-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#0a0a1a;line-height:1.2;margin-bottom:.75rem;letter-spacing:-0.5px;}
+
+.modal-rating{display:flex;align-items:center;gap:8px;margin-bottom:1rem;}
+
+.modal-stars{color:#f5a623;font-size:1rem;}
+
+.modal-rating-txt{font-size:.82rem;color:#888;}
+
+.modal-price-row{display:flex;align-items:baseline;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+
+.modal-price{font-family:'DM Sans',sans-serif;font-size:2rem;font-weight:800;color:#0a0a1a;}
+
+.modal-old-price{font-size:1rem;color:#ccc;text-decoration:line-through;}
+
+.modal-discount{background:#fff0f0;color:#ff4757;font-size:.75rem;font-weight:800;padding:3px 10px;border-radius:50px;}
+
+.modal-desc-full{font-size:.9rem;color:#666;line-height:1.8;margin-bottom:1.25rem;}
+
+.modal-specs{background:#f8faff;border-radius:12px;padding:1rem 1.25rem;}
+
+.modal-spec{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #eef2ff;font-size:.85rem;}
+
+.modal-spec:last-child{border-bottom:none;}
+
+.modal-spec-lbl{color:#888;font-weight:500;}
+
+.modal-spec-val{color:#0a0a1a;font-weight:600;}
+
+.modal-tabs{display:flex;gap:.5rem;margin-bottom:1rem;border-bottom:1px solid #eef2ff;padding-bottom:.75rem;}
+
+.modal-tab{font-size:.8rem;font-weight:600;color:#aaa;cursor:pointer;padding:4px 10px;border-radius:50px;transition:all .15s;}
+
+.modal-tab.on{color:#1a8cff;background:#eef5ff;}
+
+.modal-stock-in{display:inline-flex;align-items:center;gap:6px;background:#e0fff4;color:#00a878;border:1px solid #b0e8cc;border-radius:50px;padding:5px 14px;font-size:.78rem;font-weight:700;margin-bottom:1rem;}
+
+.modal-stock-out{display:inline-flex;align-items:center;gap:6px;background:#fff0f0;color:#ff4757;border:1px solid #ffc0c0;border-radius:50px;padding:5px 14px;font-size:.78rem;font-weight:700;margin-bottom:1rem;}
+
+.modal-actions{display:flex;gap:.75rem;margin-top:auto;padding-top:1rem;}
+
+.modal-add-btn{flex:1;background:linear-gradient(135deg,#1a8cff,#6040ff);color:#fff;border:none;border-radius:50px;padding:13px;font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(26,140,255,.35);transition:all .2s;}
+
+.modal-add-btn:hover{box-shadow:0 8px 28px rgba(26,140,255,.5);transform:translateY(-1px);}
+
+.modal-add-btn:disabled{background:#ccc;box-shadow:none;cursor:not-allowed;transform:none;}
+
+.modal-fav-btn{width:48px;height:48px;border-radius:50%;border:1.5px solid #e4ecff;background:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
+
+.modal-fav-btn:hover{border-color:#ff4757;color:#ff4757;}
+
+/* TOAST */
+
+@media(max-width:1024px){
+  .catalog-wrap{grid-template-columns:1fr;}
+  .sidebar{position:static;}
+  .prods-grid{grid-template-columns:repeat(2,1fr);}
+  .modal-inner{grid-template-columns:1fr;}
+  .modal-img-wrap{border-radius:24px 24px 0 0;min-height:220px;}
+}
+
+@media(max-width:600px){
+  .prods-grid{grid-template-columns:1fr;}
+  .nav-pill{display:none;}
+  .catalog-wrap{padding:1.5rem;}
+}
+
+/* RADIO BUTTONS */
+
+.filter-check input[type=radio]{accent-color:#1a8cff;width:16px;height:16px;cursor:pointer;}
+
+/* PRICE INPUTS */
+
+.filter-group input[type=number]{font-size:.82rem;color:#333;background:#f8faff;transition:border-color .15s;}
+
+.filter-group input[type=number]:focus{border-color:#1a8cff!important;outline:none;}
+
+.filter-group input[type=number]::-webkit-inner-spin-button{opacity:0.5;}
+
+/* APPLY BTN icon */
+
+/* стилове за страницата за нас */
+
+.about-hero{background:linear-gradient(135deg,#060614 0%,#0a1428 55%,#060d20 100%);padding:calc(62px + 3rem) 2.5rem 0;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+.about-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+
+.about-hero-blob1{position:absolute;top:-80px;right:5%;width:500px;height:500px;background:radial-gradient(circle,rgba(26,140,255,0.12) 0%,transparent 60%);border-radius:50%;pointer-events:none;}
+
+.about-hero-blob2{position:absolute;bottom:60px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(96,64,255,0.08) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+
+.about-hero-inner{max-width:1280px;width:100%;margin:0 auto;padding:2rem 2.5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;flex:1;}
+
+.about-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(26,140,255,0.1);border:1px solid rgba(26,140,255,0.25);border-radius:50px;padding:6px 18px;margin-bottom:1.5rem;}
+
+.about-tag-dot{width:7px;height:7px;border-radius:50%;background:#1a8cff;box-shadow:0 0 8px #1a8cff;animation:pulse 2s infinite;display:inline-block;}
+
+.about-tag span{font-size:.72rem;font-weight:700;letter-spacing:.14em;color:#4aadff;text-transform:uppercase;}
+
+.about-hero-title{font-size:clamp(3rem,6.5vw,5.5rem);font-weight:900;color:#ffffff;line-height:.95;letter-spacing:-3px;margin-bottom:1.25rem;text-shadow:0 2px 20px rgba(0,0,0,0.3);}
+
+.about-hero-title span{background:linear-gradient(120deg,#4aadff,#7060ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+.about-hero-sub{color:#aabbd0;font-size:1rem;line-height:1.85;max-width:460px;margin-bottom:2.25rem;}
+
+.about-hero-btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+
+.about-hero-link{color:#aabbd0;font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:color .15s;border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:13px 22px;}
+
+.about-hero-link:hover{color:#fff;}
+
+.about-hero-right{position:relative;height:340px;display:flex;align-items:center;justify-content:center;}
+
+.ah-card-main{background:linear-gradient(135deg,#1a8cff,#5040e0);border-radius:24px;padding:2.5rem 2rem;width:220px;text-align:center;box-shadow:0 24px 60px rgba(26,140,255,.4);position:relative;z-index:2;}
+
+.ah-card-main-icon{font-size:2.5rem;margin-bottom:.75rem;}
+
+.ah-card-main-n{font-size:2.2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.25rem;}
+
+.ah-card-main-l{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:.2rem;}
+
+.ah-card-main-sub{font-size:.7rem;color:rgba(255,255,255,.5);}
+
+.ah-card{position:absolute;background:rgba(8,14,32,0.9);border:1px solid rgba(26,140,255,.35);border-radius:16px;padding:1rem 1.25rem;z-index:3;box-shadow:0 8px 30px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:.25rem;}
+
+.ah-card-tl{top:20px;left:-10px;transform:rotate(-3deg);}
+
+.ah-card-br{bottom:20px;right:-10px;transform:rotate(2deg);}
+
+.ah-card-rating{top:42%;right:-45px;transform:translateY(-50%) rotate(2deg);align-items:center;}
+
+.ah-card-n{font-size:1.8rem;font-weight:900;color:#ffffff;line-height:1;}
+
+.ah-card-l{font-size:.68rem;color:#8aa0bc;letter-spacing:.08em;text-transform:uppercase;line-height:1.4;}
+
+.about-line{height:1px;background:linear-gradient(90deg,transparent,rgba(26,140,255,0.4),transparent);}
+
+.mission-sec{padding:5rem 2.5rem;background:#fff;}
+
+.mission-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+
+.mission-img-wrap{position:relative;}
+
+.mission-img{width:100%;border-radius:24px;overflow:hidden;aspect-ratio:4/3;}
+
+.mission-img img{width:100%;height:100%;object-fit:cover;}
+
+.mission-badge{position:absolute;bottom:-20px;right:-20px;background:#fff;border:1.5px solid #e4ecff;border-radius:20px;padding:1.25rem 1.5rem;box-shadow:0 8px 30px rgba(26,140,255,.12);}
+
+.mission-badge-n{font-size:2rem;font-weight:900;color:#1a8cff;display:block;}
+
+.mission-badge-l{font-size:.72rem;color:#888;font-weight:600;letter-spacing:.08em;text-transform:uppercase;}
+
+.mission-text .sec-tag{display:inline-flex;align-items:center;gap:7px;background:#eef5ff;border:1px solid #c0d8ff;border-radius:50px;padding:5px 16px;margin-bottom:1.25rem;}
+
+.mission-text .sec-tag span{font-size:.72rem;font-weight:700;color:#1a8cff;letter-spacing:.12em;text-transform:uppercase;}
+
+.mission-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#0a0a1a;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem;}
+
+.mission-text h2 span{color:#1a8cff;}
+
+.mission-text p{color:#666;font-size:.95rem;line-height:1.85;margin-bottom:1rem;}
+
+.mission-checks{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
+
+.mc{display:flex;align-items:flex-start;gap:12px;}
+
+.mc-icon{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#1a8cff,#5040e0);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem;color:#fff;font-weight:800;margin-top:2px;}
+
+.mc-text{font-size:.9rem;color:#444;line-height:1.6;}
+
+.mc-text strong{color:#0a0a1a;}
+
+.values-sec{padding:5rem 2.5rem;background:linear-gradient(135deg,#f0f7ff,#e8f0ff);}
+
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+
+.val-card{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;padding:2rem;position:relative;overflow:hidden;transition:all .2s;}
+
+.val-card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(26,140,255,.12);border-color:#1a8cff;}
+
+.val-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);border-radius:3px 3px 0 0;}
+
+.val-card.blue{--accent:linear-gradient(90deg,#1a8cff,#6040ff);}
+
+.val-card.green{--accent:linear-gradient(90deg,#00c48c,#00a878);}
+
+.val-card.orange{--accent:linear-gradient(90deg,#ff6b35,#ff4757);}
+
+.val-card.purple{--accent:linear-gradient(90deg,#a855f7,#7c3aed);}
+
+.val-card.teal{--accent:linear-gradient(90deg,#06b6d4,#0891b2);}
+
+.val-card.yellow{--accent:linear-gradient(90deg,#f59e0b,#d97706);}
+
+.val-icon{font-size:2.2rem;margin-bottom:1rem;}
+
+.val-title{font-size:1.05rem;font-weight:700;color:#0a0a1a;margin-bottom:.5rem;}
+
+.val-desc{font-size:.88rem;color:#666;line-height:1.7;}
+
+.team-sec{padding:5rem 2.5rem;background:#fff;}
+
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+
+.team-card{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;overflow:hidden;text-align:center;transition:all .2s;}
+
+.team-card:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(26,140,255,.12);border-color:#1a8cff;}
+
+.team-img{height:200px;overflow:hidden;background:linear-gradient(135deg,#f0f4fa,#e8f0ff);}
+
+.team-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+
+.team-card:hover .team-img img{transform:scale(1.05);}
+
+.team-info{padding:1.25rem;}
+
+.team-name{font-size:1rem;font-weight:700;color:#0a0a1a;margin-bottom:.2rem;}
+
+.team-role{font-size:.78rem;font-weight:600;color:#1a8cff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;}
+
+.team-bio{font-size:.8rem;color:#888;line-height:1.6;}
+
+.timeline-sec{padding:5rem 2.5rem;background:linear-gradient(135deg,#060614,#0a1428);}
+
+.timeline-sec .sec-title{color:#fff;}
+
+.timeline-sec .sec-sub{color:#4a6080;}
+
+.tl-wrap{margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto;}
+
+.tl-row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch;gap:0;}
+
+.tl-empty{min-height:10px;}
+
+.tl-center{display:flex;flex-direction:column;align-items:center;}
+
+.tl-line{flex:1;width:2px;background:linear-gradient(to bottom,rgba(26,140,255,0.3),rgba(26,140,255,0.15));min-height:20px;}
+
+.tl-line-fade{background:linear-gradient(to bottom,rgba(26,140,255,0.15),transparent);}
+
+.tl-dot-wrap{position:relative;z-index:2;margin:4px 0;}
+
+.tl-dot-outer{width:18px;height:18px;border-radius:50%;background:rgba(26,140,255,0.2);border:2px solid #1a8cff;display:flex;align-items:center;justify-content:center;}
+
+.tl-dot-inner{width:8px;height:8px;border-radius:50%;background:#1a8cff;}
+
+.tl-dot-active .tl-dot-outer{width:22px;height:22px;background:rgba(26,140,255,0.3);box-shadow:0 0 16px rgba(26,140,255,0.5);}
+
+.tl-dot-active .tl-dot-inner{width:10px;height:10px;background:#fff;}
+
+.tl-card{background:rgba(255,255,255,0.04);border:1px solid rgba(26,140,255,0.15);border-radius:20px;padding:1.75rem;margin:12px 0;transition:all .25s;position:relative;overflow:hidden;}
+
+.tl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#1a8cff,#6040ff);opacity:0;transition:opacity .25s;}
+
+.tl-card:hover{border-color:rgba(26,140,255,0.4);background:rgba(26,140,255,0.07);transform:translateY(-2px);}
+
+.tl-card:hover::before{opacity:1;}
+
+.tl-card-active{border-color:rgba(26,140,255,0.4);background:rgba(26,140,255,0.08);}
+
+.tl-card-active::before{opacity:1;}
+
+.tl-left .tl-card{text-align:right;}
+
+.tl-left .tl-card-stat{justify-content:flex-end;}
+
+.tl-card-icon{font-size:2rem;margin-bottom:.75rem;display:block;}
+
+.tl-year-badge{display:inline-block;font-size:1.6rem;font-weight:900;color:#4aadff;line-height:1;margin-bottom:.4rem;}
+
+.tl-year-active{background:linear-gradient(120deg,#4aadff,#7060ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+.tl-card-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.5rem;}
+
+.tl-card-desc{font-size:.85rem;color:#6888aa;line-height:1.7;margin-bottom:.85rem;}
+
+.tl-card-stat{display:flex;align-items:center;gap:6px;font-size:.78rem;color:#4a6080;}
+
+.tl-card-stat span{color:#4aadff;font-weight:800;font-size:.9rem;}
+
+.tl-card-stats-row{display:flex;gap:1.5rem;}
+
+.tl-mini-stat{display:flex;flex-direction:column;gap:2px;}
+
+.tl-mini-stat span{font-size:1rem;font-weight:800;color:#4aadff;}
+
+.tl-mini-stat small{font-size:.65rem;color:#4a6080;text-transform:uppercase;letter-spacing:.08em;}
+
+.brands-bar{background:#eef3ff;padding:2.5rem 2.5rem;border-top:1px solid #dce8ff;border-bottom:1px solid #dce8ff;}
+
+.brands-bar-inner{max-width:1280px;margin:0 auto;}
+
+.brands-bar h3{text-align:center;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#888;margin-bottom:1.5rem;}
+
+.brand-item{font-size:1rem;font-weight:800;color:#b0bdd0;letter-spacing:.08em;transition:color .15s;}
+
+.brand-item:hover{color:#1a8cff;}
+
+.brand-item.own{color:#1a8cff;}
+
+.cta-sec{background:linear-gradient(135deg,#0a0a1a,#0d1f3c);padding:5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+
+.cta-sec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.05) 1px,transparent 1px);background-size:40px 40px;}
+
+.cta-blob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(26,140,255,0.1) 0%,transparent 65%);pointer-events:none;}
+
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1;}
+
+.cta-sec h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:1rem;}
+
+.cta-sec h2 span{color:#4aadff;}
+
+.cta-sec p{color:#6888aa;font-size:1rem;line-height:1.8;margin-bottom:2.5rem;}
+
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* стилове за страницата с контакти */
+
+.contact-hero{background:linear-gradient(135deg,#060614 0%,#0a1428 55%,#060d20 100%);padding:calc(62px + 3rem) 2.5rem 3rem;position:relative;overflow:hidden;text-align:center;}
+
+.contact-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+
+.contact-hero-blob1{position:absolute;top:-80px;left:10%;width:500px;height:500px;background:radial-gradient(circle,rgba(26,140,255,0.1) 0%,transparent 60%);border-radius:50%;pointer-events:none;}
+
+.contact-hero-blob2{position:absolute;bottom:-60px;right:8%;width:380px;height:380px;background:radial-gradient(circle,rgba(96,64,255,0.08) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+
+.contact-hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:1;}
+
+.contact-hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:#fff;letter-spacing:-2px;margin-bottom:1rem;line-height:1.05;}
+
+.contact-hero h1 span{background:linear-gradient(120deg,#4aadff,#7060ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+.contact-hero p{color:#6888aa;font-size:1rem;line-height:1.8;}
+
+/* светлата главна секция */
+
+.contact-main-sec{background:#f0f6ff;padding:0 0 5rem;}
+
+/* лентата с контактна информация */
+
+.ci-strip{display:flex;align-items:center;justify-content:center;gap:0;padding:2.5rem;background:#fff;border-bottom:1px solid #e4ecff;flex-wrap:wrap;box-shadow:0 2px 12px rgba(26,140,255,0.06);}
+
+.ci-strip-item{display:flex;align-items:center;gap:.9rem;padding:0 2.5rem;}
+
+.ci-strip-sep{width:1px;height:44px;background:#e4ecff;}
+
+.ci-strip-icon{font-size:1.3rem;width:42px;height:42px;background:linear-gradient(135deg,#eef5ff,#e4ecff);border:1px solid #c8deff;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+.ci-strip-title{font-size:.62rem;font-weight:700;color:#1a8cff;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.15rem;}
+
+.ci-strip-val{font-size:.9rem;font-weight:600;color:#333;}
+
+/* решетката с форма и FAQ */
+
+.contact-grid-wrap{max-width:1280px;margin:0 auto;padding:3rem 2.5rem 3rem;display:grid;grid-template-columns:1.15fr 0.85fr;gap:2.5rem;align-items:start;}
+
+/* тъмната форма */
+
+.contact-form-wrap{background:linear-gradient(135deg,#0a0f22,#0d1830);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(10,15,40,0.25);}
+
+.contact-form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1a8cff,#6040ff);}
+
+.contact-form-wrap::after{content:'';position:absolute;top:-80px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(26,140,255,0.1) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+
+.cf-header{margin-bottom:1.75rem;position:relative;z-index:1;}
+
+.cf-header-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(26,140,255,0.12);border:1px solid rgba(26,140,255,0.3);border-radius:50px;padding:5px 14px;margin-bottom:.85rem;}
+
+.cf-header-tag span:last-child{font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#4aadff;text-transform:uppercase;}
+
+.cf-header h2{font-size:1.7rem;font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:.4rem;}
+
+.cf-header h2 span{color:#4aadff;}
+
+.cf-header p{font-size:.86rem;color:#6888aa;}
+
+.cf-form{position:relative;z-index:1;}
+
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+.cf-field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:.9rem;}
+
+.cf-label{font-size:.7rem;font-weight:700;color:#6888aa;letter-spacing:.08em;text-transform:uppercase;}
+
+.cf-optional{font-weight:400;color:#3a5070;text-transform:none;font-size:.68rem;}
+
+.cf-input{background:rgba(255,255,255,0.07);border:1px solid rgba(26,140,255,0.2);border-radius:10px;padding:11px 14px;font-size:.9rem;color:#fff;font-family:'Geist',sans-serif;outline:none;transition:all .2s;width:100%;}
+
+.cf-input:focus{border-color:#1a8cff;background:rgba(26,140,255,0.1);box-shadow:0 0 0 3px rgba(26,140,255,0.15);}
+
+.cf-input::placeholder{color:#2a3d58;}
+
+.cf-select{cursor:pointer;appearance:none;color:#fff;}
+
+.cf-select option{background:#0d1830;color:#fff;}
+
+.cf-select-wrap{position:relative;}
+
+.cf-select-wrap::after{content:'↓';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#4a6080;pointer-events:none;font-size:.8rem;}
+
+.cf-textarea{min-height:120px;resize:vertical;}
+
+.cf-submit{width:100%;background:linear-gradient(135deg,#1a8cff,#5040e0);color:#fff;border:none;border-radius:10px;padding:14px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Geist',sans-serif;box-shadow:0 6px 24px rgba(26,140,255,0.4);transition:all .2s;margin-top:.4rem;letter-spacing:.02em;}
+
+.cf-submit:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(26,140,255,0.5);}
+
+.cf-submit:disabled{opacity:.6;cursor:not-allowed;}
+
+.cf-success{display:none;background:rgba(0,196,140,0.1);border:1px solid rgba(0,196,140,0.3);border-radius:10px;padding:.9rem;color:#00c48c;font-weight:600;font-size:.88rem;text-align:center;margin-top:.9rem;}
+
+/* светлата дясна страна с FAQ */
+
+.contact-right{display:flex;flex-direction:column;gap:1.25rem;}
+
+.ct-trust{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;box-shadow:0 4px 20px rgba(26,140,255,0.07);}
+
+.ct-trust-item{display:flex;align-items:center;gap:.9rem;}
+
+.ct-trust-icon{font-size:1.4rem;width:44px;height:44px;background:linear-gradient(135deg,#eef5ff,#e0ecff);border:1.5px solid #c8deff;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+.ct-trust-title{font-size:.88rem;font-weight:700;color:#0a0a1a;margin-bottom:.1rem;}
+
+.ct-trust-sub{font-size:.76rem;color:#888;}
+
+.cf-faq{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;padding:1.5rem;box-shadow:0 4px 20px rgba(26,140,255,0.07);}
+
+.cf-faq h3{font-size:.95rem;font-weight:800;color:#0a0a1a;margin-bottom:1rem;}
+
+.faq-list{display:flex;flex-direction:column;gap:.4rem;}
+
+.faq-item{border:1px solid #edf2ff;border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;}
+
+.faq-item:hover{border-color:#c0d8ff;box-shadow:0 2px 8px rgba(26,140,255,0.08);}
+
+.faq-item.open{border-color:#1a8cff;box-shadow:0 4px 16px rgba(26,140,255,0.12);}
+
+.faq-q{padding:.85rem 1rem;font-size:.85rem;font-weight:600;color:#333;display:flex;justify-content:space-between;align-items:center;background:#fff;gap:.5rem;}
+
+.faq-item.open .faq-q{color:#1a8cff;background:#f0f7ff;}
+
+.faq-arrow{transition:transform .2s;color:#aaa;flex-shrink:0;}
+
+.faq-item.open .faq-arrow{transform:rotate(180deg);color:#1a8cff;}
+
+.faq-a{display:none;padding:.85rem 1rem;font-size:.82rem;color:#666;line-height:1.75;background:#fafcff;border-top:1px solid #edf2ff;}
+
+.faq-item.open .faq-a{display:block;}
+
+/* социалните бутони */
+
+.cf-social{background:#fff;border:1.5px solid #e4ecff;border-radius:20px;padding:1.5rem;box-shadow:0 4px 20px rgba(26,140,255,0.07);}
+
+.cf-social h3{font-size:.95rem;font-weight:800;color:#0a0a1a;margin-bottom:1rem;}
+
+.cf-social-links{display:flex;flex-direction:column;gap:.5rem;}
+
+.cf-social-btn{display:flex;align-items:center;gap:10px;background:#f8faff;border:1.5px solid #e4ecff;border-radius:10px;padding:10px 14px;font-size:.88rem;font-weight:600;color:#444;transition:all .18s;}
+
+.cf-social-btn:hover{border-color:#1a8cff;color:#1a8cff;background:#eef5ff;transform:translateX(5px);box-shadow:0 4px 16px rgba(26,140,255,0.12);}
+
+.cf-social-arr{margin-left:auto;color:#ccc;transition:color .18s;}
+
+.cf-social-btn:hover .cf-social-arr{color:#1a8cff;}
+
+@media(max-width:1024px){.contact-grid-wrap{grid-template-columns:1fr;}}
+
+@media(max-width:768px){.ci-strip{flex-direction:column;align-items:flex-start;padding:1.5rem 2rem;gap:1rem;}.ci-strip-sep{display:none;}.ci-strip-item{padding:0;}.cf-row{grid-template-columns:1fr;}}
+
+/* responsive стилове за малки екрани */
+
+@media(max-width:1024px){
+  .hero-inner,.mission-inner,.promo-inner,.about-hero-inner{grid-template-columns:1fr;}
+  .cats-grid{grid-template-columns:repeat(2,1fr);}
+  .prods-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .values-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .tl-row{grid-template-columns:1fr 40px;}
+  .tl-empty{display:none;}
+  .tl-left .tl-card{text-align:left;}
+}
+
+@media(max-width:768px){
+  .nav-pill{display:none;}
+  .prods-grid{grid-template-columns:repeat(2,1fr);}
+  .reviews-grid{grid-template-columns:1fr;}
+  .stats-bar-inner{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;}
+  .brands-row{gap:1.5rem;}
+  .countdown{gap:.4rem;}
+  .cd-block{padding:.75rem 1rem;min-width:70px;}
+  .cd-num{font-size:2rem;}
+}
+
+/* стилове за страницата с количката */
+
+/* hero на количката */
+
+.cart-hero{background:linear-gradient(135deg,#060614 0%,#0a1428 55%,#060d20 100%);padding:calc(62px + 2rem) 2.5rem 2rem;position:relative;overflow:hidden;}
+
+.cart-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+
+.cart-hero-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
+
+.breadcrumb-row{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#3a5070;margin-bottom:1rem;}
+
+.breadcrumb-row a{color:#3a5070;transition:color .15s;}
+
+.breadcrumb-row a:hover{color:#4aadff;}
+
+.breadcrumb-row span:last-child{color:#4aadff;font-weight:700;}
+
+.cart-hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1;}
+
+.cart-hero h1 span{background:linear-gradient(120deg,#4aadff,#7060ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+/* основния layout */
+
+.cart-sec{background:#f0f6ff;padding:3rem 0;}
+
+/* решетката с форма и FAQ */
+
+.cart-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:start;}
+
+/* когато количката е празна */
+
+.cart-empty{background:#fff;border:1.5px solid #e4ecff;border-radius:24px;padding:4rem 2rem;text-align:center;box-shadow:0 4px 20px rgba(26,140,255,0.06);margin-bottom:0;}
+
+.cart-empty-icon{font-size:4rem;margin-bottom:1rem;}
+
+.cart-empty h2{font-size:1.5rem;font-weight:800;color:#0a0a1a;margin-bottom:.5rem;}
+
+.cart-empty p{color:#888;font-size:.92rem;margin-bottom:2rem;}
+
+/* продуктите в количката */
+
+.cart-items-wrap{display:flex;flex-direction:column;gap:1rem;}
+
+.cart-items-header{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 40px;gap:1rem;padding:.75rem 1.25rem;background:#fff;border-radius:12px;border:1.5px solid #e4ecff;font-size:.72rem;font-weight:700;color:#888;letter-spacing:.08em;text-transform:uppercase;}
+
+.cart-item{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 40px;gap:1rem;align-items:center;background:#fff;border:1.5px solid #e4ecff;border-radius:16px;padding:1rem 1.25rem;box-shadow:0 2px 10px rgba(26,140,255,0.04);transition:all .2s;}
+
+.cart-item:hover{border-color:#c0d8ff;box-shadow:0 4px 18px rgba(26,140,255,0.1);}
+
+.ci-product{display:flex;align-items:center;gap:.9rem;}
+
+.ci-img{width:60px;height:60px;border-radius:12px;object-fit:cover;background:linear-gradient(135deg,#f0f4fa,#e8f0ff);flex-shrink:0;}
+
+.ci-brand{font-size:.65rem;font-weight:700;color:#1a8cff;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem;}
+
+.ci-name{font-size:.9rem;font-weight:700;color:#0a0a1a;line-height:1.3;}
+
+.ci-price{font-size:.95rem;font-weight:700;color:#333;}
+
+.ci-old{font-size:.75rem;color:#bbb;text-decoration:line-through;display:block;}
+
+.ci-qty{display:flex;align-items:center;gap:.5rem;}
+
+.ci-qty-btn{width:30px;height:30px;border-radius:8px;border:1.5px solid #e4ecff;background:#f8faff;color:#333;font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:'Geist',sans-serif;}
+
+.ci-qty-btn:hover{border-color:#1a8cff;color:#1a8cff;background:#eef5ff;}
+
+.ci-qty-num{font-size:.9rem;font-weight:700;color:#0a0a1a;min-width:24px;text-align:center;}
+
+.ci-total{font-size:1rem;font-weight:800;color:#0a0a1a;}
+
+.ci-remove{width:32px;height:32px;border-radius:8px;border:1.5px solid #ffe0e0;background:#fff5f5;color:#ff4757;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+
+.ci-remove:hover{background:#ff4757;color:#fff;border-color:#ff4757;}
+
+/* бутона за продължаване */
+
+.cart-continue{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;}
+
+.cart-back-btn{font-size:.85rem;font-weight:600;color:#1a8cff;transition:opacity .15s;}
+
+.cart-back-btn:hover{opacity:.7;}
+
+.cart-clear-btn{font-size:.82rem;font-weight:600;color:#ff4757;background:none;border:none;cursor:pointer;font-family:'Geist',sans-serif;transition:opacity .15s;}
+
+.cart-clear-btn:hover{opacity:.7;}
+
+/* обобщението вдясно */
+
+.cart-summary{background:#fff;border:1.5px solid #e4ecff;border-radius:24px;overflow:hidden;box-shadow:0 8px 30px rgba(26,140,255,0.08);position:sticky;top:80px;}
+
+.cs-header{background:linear-gradient(135deg,#0a0f22,#0d1830);padding:1.25rem 1.5rem;position:relative;overflow:hidden;}
+
+.cs-header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1a8cff,#6040ff);}
+
+.cs-header h3{font-size:1rem;font-weight:800;color:#fff;}
+
+.cs-body{padding:1.5rem;}
+
+.cs-promo{margin-bottom:1.25rem;}
+
+.cs-label{font-size:.72rem;font-weight:700;color:#888;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.5rem;}
+
+.cs-promo-row{display:flex;gap:.5rem;}
+
+.cs-promo-input{flex:1;background:#f8faff;border:1.5px solid #e4ecff;border-radius:10px;padding:9px 12px;font-size:.85rem;color:#333;font-family:'Geist',sans-serif;outline:none;transition:border-color .2s;}
+
+.cs-promo-input:focus{border-color:#1a8cff;}
+
+.cs-promo-btn{background:#0a0f22;color:#fff;border:none;border-radius:10px;padding:9px 16px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;transition:opacity .15s;}
+
+.cs-promo-btn:hover{opacity:.8;}
+
+.cs-promo-msg{font-size:.78rem;margin-top:.4rem;min-height:1em;}
+
+.cs-promo-msg.ok{color:#00c48c;}
+
+.cs-promo-msg.err{color:#ff4757;}
+
+.cs-divider{height:1px;background:#f0f0f0;margin:.9rem 0;}
+
+.cs-row{display:flex;justify-content:space-between;align-items:center;font-size:.88rem;color:#555;margin-bottom:.5rem;}
+
+.cs-row span:last-child{font-weight:600;color:#333;}
+
+.cs-total{font-size:1.1rem;font-weight:900;color:#0a0a1a !important;margin-bottom:0;}
+
+.cs-total span{color:#0a0a1a !important;}
+
+.cs-free-delivery{background:#f0f7ff;border-radius:10px;padding:.85rem 1rem;margin:1rem 0;}
+
+.cs-fd-text{font-size:.78rem;color:#555;margin-bottom:.5rem;}
+
+.cs-fd-text strong{color:#1a8cff;}
+
+.cs-fd-bar{height:6px;background:#dce8ff;border-radius:6px;overflow:hidden;}
+
+.cs-fd-fill{height:100%;background:linear-gradient(90deg,#1a8cff,#6040ff);border-radius:6px;transition:width .4s;}
+
+.cs-checkout-btn{width:100%;background:linear-gradient(135deg,#1a8cff,#5040e0);color:#fff;border:none;border-radius:12px;padding:14px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:'Geist',sans-serif;box-shadow:0 4px 20px rgba(26,140,255,0.3);transition:all .2s;margin:1rem 0 .75rem;letter-spacing:.02em;}
+
+.cs-checkout-btn:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(26,140,255,0.45);}
+
+.cs-trust{display:flex;flex-direction:column;gap:.4rem;}
+
+.cs-trust-item{font-size:.75rem;color:#888;display:flex;align-items:center;gap:.4rem;}
+
+/* препоръчаните продукти */
+
+.cart-recommended{margin-top:3rem;}
+
+.cart-rec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+
+/* съобщението след поръчка */
+
+.cart-success{background:#fff;border:1.5px solid #e4ecff;border-radius:24px;padding:4rem 2rem;text-align:center;box-shadow:0 4px 20px rgba(26,140,255,0.06);display:none;}
+
+.cart-success-icon{font-size:4rem;margin-bottom:1rem;}
+
+.cart-success h2{font-size:1.5rem;font-weight:800;color:#0a0a1a;margin-bottom:.5rem;}
+
+.cart-success p{color:#888;font-size:.92rem;margin-bottom:2rem;}
+
+@media(max-width:1024px){.cart-grid{grid-template-columns:1fr;}.cart-summary{position:static;}.cart-rec-grid{grid-template-columns:repeat(2,1fr);}}
+
+@media(max-width:768px){.cart-items-header{display:none;}.cart-item{grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:.75rem;}.ci-product{grid-column:1;}.ci-remove{grid-column:2;grid-row:1;}.ci-price,.ci-qty,.ci-total{font-size:.85rem;}}
+
+/* лентата с марките на началната страница */
+
+.brands{background:#eef3ff;padding:1.5rem 2.5rem;border-top:1px solid #dce8ff;border-bottom:1px solid #dce8ff;}
+
+.brands-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;}
+
+.brand{font-size:1rem;font-weight:800;color:#b0bdd0;letter-spacing:.08em;transition:color .15s;cursor:default;}
+
+.brand:hover{color:#1a8cff;}
+
+.brand.own{color:#1a8cff;}
+
+/* картите с категориите */
+
+.cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(26,140,255,0.14);}
+
+.cat-img-wrap{width:100%;height:140px;border-radius:14px;overflow:hidden;margin-bottom:1rem;position:relative;}
+
+.cat-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.15),transparent);}
+
+.cat-card-title{font-family:'Geist',sans-serif;font-size:0.95rem;font-weight:700;color:#0a0a1a;margin-bottom:0.3rem;}
+
+.cat-card-sub{font-size:0.76rem;color:#999;margin-bottom:1rem;}
+
+/* лентата с числата */
+
+.stat-cell{padding:2.25rem 1rem;text-align:center;border-right:1px solid rgba(26,140,255,0.12);position:relative;}
+
+.stat-cell:last-child{border-right:none;}
+
+.stat-cell-line{position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:2px;background:linear-gradient(90deg,transparent,#1a8cff,transparent);}
+
+.stat-label{font-size:0.7rem;color:#4a6080;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;}
+
+/* отзивите */
+
+.rev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(26,140,255,0.2);border-radius:16px;padding:1.5rem;position:relative;}
+
+.rev-top-line{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#1a8cff,transparent);border-radius:16px 16px 0 0;}
+
+.rev-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.25rem;}
+
+.rev-icon-wrap{width:36px;height:36px;border-radius:50%;background:rgba(26,140,255,0.15);border:1px solid rgba(26,140,255,0.3);display:flex;align-items:center;justify-content:center;}
+
+.rev-stars{color:#f5a623;font-size:1rem;letter-spacing:2px;}
+
+.rev-text{font-size:0.92rem;color:#8a9bb8;line-height:1.75;font-style:italic;margin-bottom:1.5rem;}
+
+.rev-footer{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.25rem;}
+
+.rev-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1a8cff,#0a5fd4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+
+.rev-author{font-size:0.88rem;font-weight:700;color:#fff;}
+
+.rev-date{font-size:0.74rem;color:#4a6080;}
+
+.rev-badge{position:absolute;top:1rem;right:1rem;background:#1a8cff;color:#fff;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.05em;}
+
+.rev-divider{width:1px;height:40px;background:rgba(255,255,255,0.08);}
+
+/* числата в промо секцията */
+
+.promo-stat{background:rgba(255,255,255,0.05);border:1px solid rgba(26,140,255,0.2);border-radius:16px;padding:1.75rem 2rem;text-align:center;}
+
+.promo-stat-num{font-family:'Geist',sans-serif;font-size:2.8rem;font-weight:800;color:#fff;display:block;letter-spacing:-1px;line-height:1;}
+
+.promo-stat-label{font-size:0.62rem;color:#4a6080;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;}
+
+/* чиповете в hero */
+
+.hero-chip{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e0eaff;border-radius:12px;padding:0.6rem 1rem;}
+
+.hero-chip-icon{width:20px;height:20px;border-radius:50%;background:#1a8cff;display:flex;align-items:center;justify-content:center;font-size:0.7rem;}
+
+.hero-chip-text{font-size:0.82rem;font-weight:600;color:#333;}
+
+/* плаващите мини карти в hero */
+
+.mini-card-icon{font-size:1.6rem;margin-bottom:0.4rem;}
+
+.mini-card-name{font-size:0.8rem;font-weight:700;color:#0a0a1a;font-family:'Geist',sans-serif;}
+
+.mini-card-brand{font-size:0.7rem;color:#999;margin-bottom:0.5rem;}
+
+.mini-card-price{font-size:1.05rem;font-weight:800;color:#1a8cff;}
+
+/* таговете в hero на за нас */
+
+.about-hero-tag-item{background:rgba(255,255,255,0.05);border:1px solid rgba(26,140,255,0.2);border-radius:50px;padding:6px 16px;font-size:.82rem;font-weight:600;color:#aabbd0;}
+
+/* плаващите карти со числа в за нас */
+
+.about-stat-num{font-family:'Geist',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;line-height:1;}
+
+.about-stat-label{font-size:.68rem;color:#8aa0bc;letter-spacing:.08em;text-transform:uppercase;line-height:1.4;}
+
+/* акцентния цвят */
+
+.accent{color:#1a8cff;}
+
+/* полетата за цена */
+
+.price-input{width:50%;border:1.5px solid #e4ecff;border-radius:10px;padding:6px 10px;font-family:'Geist',sans-serif;font-size:.82rem;color:#333;outline:none;}
+
+.price-input:focus{border-color:#1a8cff;}
+
+/* newsletter в footer-а */
+
+.nl-input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(26,140,255,0.2);border-radius:50px;padding:10px 18px;color:#fff;font-family:'Geist',sans-serif;font-size:.88rem;outline:none;min-width:0;}
+
+.nl-input:focus{border-color:#1a8cff;}
+
+.nl-btn{background:#1a8cff;color:#fff;border:none;border-radius:50px;padding:10px 22px;font-family:'Geist',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s;}
+
+.nl-btn:hover{background:#0a78e0;}
+
+.nl-row{display:flex;gap:.75rem;flex:1;max-width:420px;}
+
+.nl-title{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.25rem;}
+
+.nl-sub{font-size:.82rem;color:#4a6080;}
+
+/* hero секцията */
+
+.hero-bg-shape{position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,rgba(26,140,255,0.06) 0%,rgba(100,64,255,0.04) 100%);clip-path:polygon(15% 0,100% 0,100% 100%,0 100%);pointer-events:none;}
+
+.hero-live-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #d4e4ff;border-radius:50px;padding:6px 16px;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(26,140,255,0.1);}
+
+.hero-live-dot{width:7px;height:7px;border-radius:50%;background:#1a8cff;animation:pulse 2s infinite;}
+
+.hero-live-text{font-family:'Geist',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;color:#1a8cff;text-transform:uppercase;}
+
+.hero-h1{font-family:'Geist',sans-serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:800;color:#0a0a1a;line-height:0.95;letter-spacing:-3px;margin-bottom:0.5rem;}
+
+.hero-h1-grad{background:linear-gradient(135deg,#1a8cff,#6040ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;}
+
+.hero-h2{font-family:'Geist',sans-serif;font-size:clamp(1.2rem,2.5vw,2rem);font-weight:600;color:#0a0a1a;line-height:1.15;letter-spacing:-1px;margin-bottom:0.5rem;}
+
+.hero-desc{font-size:1rem;color:#556;line-height:1.8;margin-bottom:2rem;max-width:400px;}
+
+.hero-chips-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:2.25rem;max-width:400px;}
+
+.hero-cta-row{display:flex;gap:1rem;align-items:center;margin-bottom:2rem;flex-wrap:wrap;}
+
+.btn-secondary{color:#333;padding:14px 26px;border-radius:50px;font-weight:600;font-size:0.95rem;border:1.5px solid #cdd8ee;background:#fff;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:'Geist',sans-serif;transition:all .2s;}
+
+.btn-secondary:hover{border-color:#1a8cff;color:#1a8cff;}
+
+.btn-icon-wrap{background:rgba(255,255,255,0.25);border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;}
+
+.hero-proof-row{display:flex;align-items:center;gap:12px;}
+
+.hero-avatar-blue{background:#e8f1ff;}
+
+.hero-avatar-orange{background:#ffeee8;}
+
+.hero-avatar-green{background:#e8fff0;}
+
+.hero-proof-stars{color:#f5a623;font-size:0.75rem;letter-spacing:1px;}
+
+/* плаващите карти в hero */
+
+.hero-sale-badge-text{font-family:'Geist',sans-serif;font-size:0.75rem;font-weight:800;color:#fff;letter-spacing:0.05em;}
+
+.hero-prod-card{background:linear-gradient(135deg,#1a8cff 0%,#6040ff 100%);border-radius:28px;padding:2.25rem 2rem;width:250px;position:relative;box-shadow:0 24px 60px rgba(26,140,255,0.4);transform:rotate(-2deg);z-index:2;}
+
+.hero-prod-emoji{font-size:3.8rem;text-align:center;margin-bottom:1rem;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.2));}
+
+.hero-prod-info{background:rgba(255,255,255,0.15);border-radius:14px;padding:0.75rem 1rem;margin-bottom:0.85rem;backdrop-filter:blur(4px);}
+
+.hero-prod-name{font-size:0.62rem;color:rgba(255,255,255,0.7);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2px;}
+
+.hero-prod-price{font-size:1.7rem;font-weight:800;color:#fff;font-family:'Geist',sans-serif;letter-spacing:-1px;}
+
+.hero-prod-tag-blue{background:rgba(255,255,255,0.92);border-radius:8px;padding:4px 10px;font-size:0.68rem;font-weight:700;color:#1a8cff;}
+
+.hero-prod-tag-ghost{background:rgba(255,255,255,0.2);border-radius:8px;padding:4px 10px;font-size:0.68rem;font-weight:700;color:#fff;}
+
+.hero-float-tr{top:0;right:-20px;width:158px;transform:rotate(3deg);}
+
+.hero-float-bl{bottom:10px;left:-20px;width:155px;transform:rotate(-3deg);}
+
+.hero-float-rev{top:40%;right:-45px;transform:translateY(-50%) rotate(2deg);background:#0a0a1a;border-radius:16px;width:155px;z-index:4;border:none;box-shadow:0 12px 35px rgba(0,0,0,0.25);}
+
+.float-rev-stars{color:#f5a623;font-size:0.65rem;margin-bottom:4px;letter-spacing:1px;}
+
+.float-rev-text{font-size:0.72rem;color:#9aa5bc;line-height:1.55;font-style:italic;}
+
+.float-rev-author{font-size:0.7rem;font-weight:700;color:#fff;margin-top:6px;}
+
+/* лентата с числата */
+
+.stat-cell-last{padding:2.25rem 1rem;text-align:center;position:relative;}
+
+.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(26,140,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+
+.grid-overlay-subtle{background-image:linear-gradient(rgba(26,140,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(26,140,255,0.03) 1px,transparent 1px)!important;}
+
+/* секцията с категориите */
+
+.cats-sec{background:linear-gradient(160deg,#f0f7ff 0%,#e8f0ff 100%);padding:5rem 0;position:relative;overflow:hidden;}
+
+.sec-blob{position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(26,140,255,0.06) 0%,transparent 60%);pointer-events:none;}
+
+.sec-tag{display:inline-block;background:rgba(26,140,255,0.1);border:1px solid rgba(26,140,255,0.2);border-radius:50px;padding:5px 16px;font-size:0.75rem;font-weight:700;color:#1a8cff;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+
+.sec-tag-dark{display:inline-flex;align-items:center;gap:8px;background:rgba(26,140,255,0.1);border:1px solid rgba(26,140,255,0.25);border-radius:50px;padding:6px 16px;margin-bottom:1.5rem;}
+
+.sec-tag-text{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;color:#1a8cff;text-transform:uppercase;}
+
+.sec-h2{font-family:'Geist',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#0a0a1a;margin-bottom:0.4rem;letter-spacing:-0.5px;}
+
+.sec-muted{color:#889;font-size:0.9rem;font-weight:500;}
+
+.sec-muted-dark{color:#4a6080!important;}
+
+.text-center{text-align:center;}
+
+.text-white{color:#fff!important;}
+
+.cat-accent{position:absolute;top:0;left:0;right:0;height:3px;}
+
+.cat-accent-blue{background:linear-gradient(90deg,#1a8cff,#6040ff);}
+
+.cat-accent-red{background:linear-gradient(90deg,#ff6b6b,#ff4757);}
+
+.cat-accent-orange{background:linear-gradient(90deg,#ff9f43,#ff6b35);}
+
+.cat-accent-green{background:linear-gradient(90deg,#00c48c,#00a878);}
+
+.cat-accent-purple{background:linear-gradient(90deg,#a855f7,#7c3aed);}
+
+.cat-accent-amber{background:linear-gradient(90deg,#f59e0b,#d97706);}
+
+.cat-accent-cyan{background:linear-gradient(90deg,#06b6d4,#0891b2);}
+
+.cat-accent-pink{background:linear-gradient(90deg,#ec4899,#be185d);}
+
+.cat-img{width:100%;height:100%;object-fit:cover;}
+
+.cat-btn{display:inline-flex;align-items:center;gap:5px;border-radius:50px;padding:4px 12px;font-size:0.72rem;font-weight:700;}
+
+.cat-btn-blue{background:#eef5ff;color:#1a8cff;}
+
+.cat-btn-red{background:#fff0f0;color:#ff4757;}
+
+.cat-btn-orange{background:#fff4e0;color:#ff6b35;}
+
+.cat-btn-green{background:#e0fff4;color:#00a878;}
+
+.cat-btn-purple{background:#f3e8ff;color:#7c3aed;}
+
+.cat-btn-amber{background:#fffbeb;color:#d97706;}
+
+.cat-btn-cyan{background:#e0f9ff;color:#0891b2;}
+
+.cat-btn-pink{background:#fce7f3;color:#be185d;}
+
+.prod-img-cover{width:100%;height:180px;object-fit:cover;}
+
+/* промо секцията */
+
+.promo-blob{position:absolute;pointer-events:none;border-radius:50%;}
+
+.promo-blob-tl{top:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(26,140,255,0.12) 0%,transparent 60%);}
+
+.promo-blob-br{bottom:-60px;right:10%;width:350px;height:350px;background:radial-gradient(circle,rgba(100,64,255,0.08) 0%,transparent 60%);}
+
+.promo-live-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(26,140,255,0.15);border:1px solid rgba(26,140,255,0.3);border-radius:50px;padding:6px 16px;margin-bottom:1.5rem;}
+
+.promo-live-dot{width:7px;height:7px;border-radius:50%;background:#1a8cff;box-shadow:0 0 8px #1a8cff;display:inline-block;}
+
+.promo-live-text{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;color:#1a8cff;text-transform:uppercase;}
+
+.promo-h2{font-family:'Geist',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-1.5px;margin-bottom:1rem;}
+
+.promo-right{display:flex;flex-direction:column;align-items:center;gap:1.5rem;}
+
+.promo-countdown-label{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;color:#4a6080;text-transform:uppercase;}
+
+.promo-countdown-row{display:flex;align-items:center;gap:0.75rem;}
+
+.promo-stat-num-blue{color:#1a8cff!important;}
+
+.promo-stat-num-accent{font-size:2.5rem!important;color:#1a8cff!important;margin-bottom:.25rem;}
+
+/* секцията с отзивите */
+
+.reviews-sec{background:linear-gradient(135deg,#060610 0%,#0a0a1a 50%,#060d1f 100%);padding:5rem 0;position:relative;overflow:hidden;}
+
+.reviews-blob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(26,140,255,0.04) 0%,transparent 60%);pointer-events:none;}
+
+.rev-card-accent{background:linear-gradient(135deg,rgba(26,140,255,0.1) 0%,rgba(26,140,255,0.04) 100%)!important;border-color:rgba(26,140,255,0.3)!important;}
+
+.rev-icon-wrap-strong{background:rgba(26,140,255,0.2)!important;border-color:rgba(26,140,255,0.3)!important;}
+
+.rev-avatar-purple{background:linear-gradient(135deg,#7c3aed,#4f46e5)!important;}
+
+.rev-avatar-green{background:linear-gradient(135deg,#059669,#047857)!important;}
+
+.reviews-stats-row{display:flex;justify-content:center;align-items:center;gap:3rem;margin-top:3rem;flex-wrap:wrap;}
+
+.reviews-stat-num{font-size:1.6rem;font-weight:800;color:#fff;}
+
+.reviews-stat-label{font-size:0.7rem;color:#4a6080;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;}
+
+/* hero на за нас */
+
+.about-hero-blob{position:absolute;border-radius:50%;pointer-events:none;}
+
+.about-hero-blob-tr{top:-80px;right:5%;width:500px;height:500px;background:radial-gradient(circle,rgba(26,140,255,0.12) 0%,transparent 60%);}
+
+.about-hero-blob-bl{bottom:60px;left:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(96,64,255,0.08) 0%,transparent 65%);}
+
+.about-hero-h1{font-size:clamp(3rem,6.5vw,5.5rem);font-weight:900;color:#fff;line-height:.95;letter-spacing:-3px;margin-bottom:1.25rem;}
+
+.about-hero-h1-grad{background:linear-gradient(120deg,#4aadff,#7060ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+.about-hero-desc{color:#aabbd0;font-size:1rem;line-height:1.85;max-width:460px;margin-bottom:2.25rem;}
+
+.about-hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.25rem;}
+
+.about-hero-cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+
+.about-hero-btn-ghost{color:#aabbd0;padding:13px 22px;font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.15);border-radius:50px;transition:border-color .2s;}
+
+.about-hero-btn-ghost:hover{border-color:rgba(26,140,255,0.5);color:#fff;}
+
+.about-hero-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(26,140,255,0.4),transparent);}
+
+/* визуалния елемент в hero на за нас */
+
+.about-hero-visual{position:relative;height:340px;display:flex;align-items:center;justify-content:center;}
+
+.about-stat-main{background:linear-gradient(135deg,#1a8cff,#5040e0);border-radius:24px;padding:2.5rem 2rem;width:220px;text-align:center;box-shadow:0 24px 60px rgba(26,140,255,.4);position:relative;z-index:2;}
+
+.about-stat-main-num{font-family:'Geist',sans-serif;font-size:2.2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.25rem;}
+
+.about-stat-main-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:.2rem;}
+
+.about-stat-main-sub{font-size:.7rem;color:rgba(255,255,255,.5);}
+
+.about-float-card{position:absolute;background:rgba(8,14,32,0.9);border:1px solid rgba(26,140,255,.35);border-radius:16px;padding:1rem 1.25rem;box-shadow:0 8px 30px rgba(0,0,0,.5);}
+
+.about-float-tl{top:20px;left:-10px;transform:rotate(-3deg);z-index:3;}
+
+.about-float-br{bottom:20px;right:-10px;transform:rotate(2deg);z-index:3;}
+
+.about-float-mid{top:42%;right:-45px;transform:translateY(-50%) rotate(2deg);z-index:4;padding:.9rem 1.1rem;display:flex;flex-direction:column;align-items:center;gap:.25rem;}
+
+.about-float-stars{color:#f5a623;font-size:.9rem;letter-spacing:2px;}
+
+.about-float-num{font-family:'Geist',sans-serif;font-size:1.5rem;font-weight:900;color:#fff;}
+
+.about-float-label{font-size:.62rem;color:#8aa0bc;letter-spacing:.1em;text-transform:uppercase;}
+
+/* призрачния бутон в CTA */
+
+.cta-btn-ghost{color:#fff;padding:13px 28px;border-radius:50px;font-weight:600;font-size:.92rem;border:1.5px solid rgba(255,255,255,0.4);background:transparent;display:inline-flex;align-items:center;text-decoration:none;transition:border-color .2s;}
+
+.cta-btn-ghost:hover{border-color:#fff;}
+
+/* реда с инструменти в каталога */
+
+.toolbar-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+
+/* линковете в footer-а */
+
+.footer-links{display:flex;gap:1.5rem;}
+
+/* помощни класове */
+
+.p-0{padding:0;}
+
+.pos-rel{position:relative;}
+
+.d-flex{display:flex;}
+
+.flex-gap-sm{display:flex;gap:6px;margin-bottom:8px;}
+
+.mb-6{margin-bottom:1.5rem;}
+
+.mb-12{margin-bottom:3rem;}
+
+.mb-14{margin-bottom:3.5rem;}
+
+.mt-10{margin-top:2.5rem;}
+
+.pb-12{padding-bottom:3rem;}
+
+.text-left{text-align:left;}
+
+.text-dark{color:#333;}
+
+.text-muted-sm{font-size:0.82rem;color:#888;}
+
+.text-muted-xs{color:#999;font-size:.75rem;}
+
+.bg-light-blue{background:#eef5ff;}
+
+.stars-sm{color:#f5a623;font-size:0.8rem;}
+
+.prod-price-sub{font-size:.72rem;color:#999;}
+
+.accent-light{color:#4aadff;}
+
+/* разни стилове за за нас */
+
+.about-stat-emoji{font-size:2.5rem;margin-bottom:.75rem;}
