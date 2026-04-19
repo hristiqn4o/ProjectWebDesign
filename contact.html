@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Контакти | PeakFit</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- навигация -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PEAK<span>FIT</span></a>
+  <div class="nav-pill">
+    <a href="index.html">Начало</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="about.html">За нас</a>
+    <a href="contact.html" class="on">Контакти</a>
+  </div>
+  <a href="cart.html" class="nav-cart">🛒 Количка <span class="nav-badge" id="cartBadge">0</span></a>
+</nav>
+
+<!-- hero секцията -->
+<section class="contact-hero">
+  <div class="contact-hero-blob1"></div>
+  <div class="contact-hero-blob2"></div>
+  <div class="contact-hero-inner">
+    <div class="about-tag">
+      <span class="about-tag-dot"></span>
+      <span>Свържи се с нас</span>
+    </div>
+    <h1>Как можем да <span>помогнем?</span></h1>
+    <p>Имаш въпрос за продукт, поръчка или доставка? Нашият екип е на разположение всеки ден.</p>
+  </div>
+  <div class="about-line"></div>
+</section>
+
+<!-- формата за контакт и FAQ -->
+<section class="contact-main-sec">
+
+  <!-- лентата с контактната информация -->
+  <div class="ci-strip">
+    <div class="ci-strip-item"><div class="ci-strip-icon">📍</div><div><div class="ci-strip-title">Адрес</div><div class="ci-strip-val">бул. Фитнес 12, Варна</div></div></div>
+    <div class="ci-strip-sep"></div>
+    <div class="ci-strip-item"><div class="ci-strip-icon">📞</div><div><div class="ci-strip-title">Телефон</div><div class="ci-strip-val">+359 52 123 456</div></div></div>
+    <div class="ci-strip-sep"></div>
+    <div class="ci-strip-item"><div class="ci-strip-icon">✉️</div><div><div class="ci-strip-title">Имейл</div><div class="ci-strip-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e373038311e2e3b3f3538372a703c39">[email&#160;protected]</a></div></div></div>
+    <div class="ci-strip-sep"></div>
+    <div class="ci-strip-item"><div class="ci-strip-icon">🕐</div><div><div class="ci-strip-title">Работно време</div><div class="ci-strip-val">Пон–Пет: 09:00–18:00</div></div></div>
+  </div>
+
+  <!-- основната решетка с форма и FAQ -->
+  <div class="contact-grid-wrap">
+
+    <!-- формата за изпращане на съобщение -->
+    <div class="contact-form-wrap">
+      <div class="cf-header">
+        <div class="cf-header-tag"><span class="about-tag-dot"></span><span>Онлайн форма</span></div>
+        <h2>Изпрати <span>съобщение</span></h2>
+        <p>Отговаряме в рамките на 24 часа в работни дни.</p>
+      </div>
+      <div class="cf-form" id="contactForm">
+        <div class="cf-row">
+          <div class="cf-field"><label class="cf-label">Име</label><input type="text" class="cf-input" id="cfName" placeholder="Твоето ime"/></div>
+          <div class="cf-field"><label class="cf-label">Имейл</label><input type="email" class="cf-input" id="cfEmail" placeholder="email@example.com"/></div>
+        </div>
+        <div class="cf-field">
+          <label class="cf-label">Тема</label>
+          <div class="cf-select-wrap">
+            <select class="cf-input cf-select" id="cfSubject">
+              <option value="">Избери тема...</option>
+              <option>Въпрос за поръчка</option>
+              <option>Въпрос за продукт</option>
+              <option>Доставка</option>
+              <option>Връщане / рекламация</option>
+              <option>Друго</option>
+            </select>
+          </div>
+        </div>
+        <div class="cf-field"><label class="cf-label">Съобщение</label><textarea class="cf-input cf-textarea" id="cfMessage" placeholder="Напиши своето съобщение тук..."></textarea></div>
+        <div class="cf-field"><label class="cf-label">Телефон <span class="cf-optional">(незадължително)</span></label><input type="tel" class="cf-input" id="cfPhone" placeholder="+359 88 ..."/></div>
+        <button class="cf-submit" id="cfSubmit" onclick="submitContactForm()"><span id="cfBtnText">Изпрати съобщение →</span></button>
+        <div class="cf-success" id="cfSuccess">✓ Съобщението е изпратено! Ще се свържем скоро.</div>
+      </div>
+    </div>
+
+    <!-- дясната страна с FAQ -->
+    <div class="contact-right">
+
+      <div class="ct-trust">
+        <div class="ct-trust-item"><span class="ct-trust-icon">⚡</span><div><div class="ct-trust-title">Бърз отговор</div><div class="ct-trust-sub">До 24 часа в работни дни</div></div></div>
+        <div class="ct-trust-item"><span class="ct-trust-icon">🔒</span><div><div class="ct-trust-title">Сигурност</div><div class="ct-trust-sub">Данните ти са защитени</div></div></div>
+        <div class="ct-trust-item"><span class="ct-trust-icon">🎯</span><div><div class="ct-trust-title">Безплатна консултация</div><div class="ct-trust-sub">За всеки клиент</div></div></div>
+      </div>
+
+      <div class="cf-faq">
+        <h3>Често задавани въпроси</h3>
+        <div class="faq-list">
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Колко бързо е доставката? <span class="faq-arrow">↓</span></div><div class="faq-a">1-2 работни дни. Поръчки над 80 лв. — безплатна доставка.</div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Мога ли да върна продукт? <span class="faq-arrow">↓</span></div><div class="faq-a">Да, в рамките на 14 дни. Продуктът трябва да е неотворен.</div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Как да следя поръчката си? <span class="faq-arrow">↓</span></div><div class="faq-a">Ще получиш имейл с номер за проследяване след изпращане.</div></div>
+          <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Предлагате ли консултации? <span class="faq-arrow">↓</span></div><div class="faq-a">Да! Специалистите ни са на разположение безплатно.</div></div>
+        </div>
+      </div>
+
+      <div class="cf-social">
+        <h3>Следвай ни</h3>
+        <div class="cf-social-links">
+          <a href="#" class="cf-social-btn"><span>📘</span><span>Facebook</span><span class="cf-social-arr">→</span></a>
+          <a href="#" class="cf-social-btn"><span>📸</span><span>Instagram</span><span class="cf-social-arr">→</span></a>
+          <a href="#" class="cf-social-btn"><span>▶️</span><span>YouTube</span><span class="cf-social-arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="footer-top-line"></div>
+  <div class="footer-newsletter">
+    <div class="footer-newsletter-inner">
+      <div>
+        <div class="nl-title">📧 Абонирай се за нюзлетър</div>
+        <div class="nl-sub">Получавай ексклузивни оферти и новини</div>
+      </div>
+      <div class="nl-row">
+        <input type="email" placeholder="твоят@имейл.com" class="nl-input"/>
+        <button class="nl-btn newsletter-btn" onclick="return false;" class="newsletter-btn">Абонирай се →</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <span class="footer-logo-txt">PEAK<span>FIT</span></span>
+      <p>Твоят партньор за фитнес резултати. Добавки, облекло и принадлежности с доказано качество от 2010 г.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">За нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        <li><a href="cart.html">Количка</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакти</h4>
+      <ul>
+        <li>📍 бул. Фитнес 12, Варна</li>
+        <li>📞 +359 52 123 456</li>
+        <li>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e68f888089a69683878d808f92c88481">[email&#160;protected]</a></li>
+        <li>🕐 Пон–Съб: 09:00–20:00</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Следвай ни</h4>
+      <a href="#" class="footer-social-btn"><span>📘</span><span>Facebook</span></a>
+      <a href="#" class="footer-social-btn"><span>📸</span><span>Instagram</span></a>
+      <a href="#" class="footer-social-btn"><span>▶️</span><span>YouTube</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+    <span>© 2025 PeakFit. Всички права запазени.</span>
+    <div class="footer-links">
+      <a href="#">Политика за поверителност</a>
+      <a href="#">Условия за ползване</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PEAK FIT | Фитнес добавки, Облекло & Принадлежности</title>
+</head>
+<body>
+
+<!-- навигация -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PEAK<span>FIT</span></a>
+  <div class="nav-pill">
+    <a href="index.html" class="on">Начало</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="about.html">За нас</a>
+    <a href="contact.html">Контакти</a>
+  </div>
+  <a href="cart.html" class="nav-cart">
+    🛒 Количка <span class="nav-badge" id="cartBadge">0</span>
+  </a>
+</nav>
+
+<!-- главната секция с заглавието и плаващите карти -->
+<section class="hero hero">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+
+  <!-- декоративна форма вдясно -->
+  <div class="hero-bg-shape"></div>
+
+  <div class="hero-inner hero-inner">
+
+    <!-- лявата страна -->
+    <div class="pos-rel">
+
+      <!-- малкия етикет горе -->
+      <div class="hero-live-badge">
+        <span class="hero-live-dot"></span>
+        <span class="hero-live-text">Нова колекция 2025</span>
+      </div>
+
+      <!-- голямото заглавие -->
+      <div class="mb-6">
+        <div class="hero-h1">Постигни</div>
+        <div class="hero-h1 hero-h1-grad">Резултати</div>
+        <div class="hero-h2">— с PeakFit</div>
+      </div>
+
+      <p class="hero-desc">Добавки, витамини, облекло и принадлежности за фитнес — всичко необходимо за твоето тяло.</p>
+
+      <!-- чекмарките с предимствата -->
+      <div class="hero-chips-grid">
+        <div class="hero-chip">
+          <span class="hero-chip-icon">✓</span>
+          <span class="hero-chip-text">Сертифицирани</span>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-icon">✓</span>
+          <span class="hero-chip-text">Бърза доставка</span>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-icon">✓</span>
+          <span class="hero-chip-text">Без изкуствени</span>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-icon">✓</span>
+          <span class="hero-chip-text">100% Оригинални</span>
+        </div>
+      </div>
+
+      <!-- бутоните за действие -->
+      <div class="hero-cta-row">
+        <a href="catalog.html" class="btn-primary">
+          Разгледай каталога
+          <span class="btn-icon-wrap">→</span>
+        </a>
+        <a href="about.html" class="btn-secondary">За нас</a>
+      </div>
+
+      <!-- звездите и броя клиенти -->
+      <div class="hero-proof-row">
+        <div class="d-flex">
+          <div class="hero-avatar hero-avatar-blue">💊</div>
+          <div class="hero-avatar hero-avatar-orange">🏋️</div>
+          <div class="hero-avatar hero-avatar-green">👕</div>
+        </div>
+        <div>
+          <div class="hero-proof-stars">★★★★★</div>
+          <div class="text-muted-sm"><strong class="text-dark">Хиляди</strong> доволни клиенти</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- дясната страна с плаващите продуктови карти -->
+    <div class="hero-visual pos-rel">
+
+      <!-- червения промо badge -->
+      <div class="hero-sale-badge">
+        <span class="hero-sale-badge-text">-30% SALE 🔥</span>
+      </div>
+
+      <!-- главната синя карта с протеина -->
+      <div class="hero-prod-card">
+        <div class="hero-prod-emoji">🥛</div>
+        <div class="hero-prod-info">
+          <div class="hero-prod-name">Whey Protein Gold</div>
+          <div class="hero-prod-price">46€ (89лв)</div>
+        </div>
+        <div class="flex-gap-sm">
+          <span class="hero-prod-tag-blue">Топ</span>
+          <span class="hero-prod-tag-ghost">2кг</span>
+        </div>
+      </div>
+
+      <!-- малка карта горе вдясно -->
+      <div class="hero-float-card hero-float-tr">
+        <div class="mini-card-icon">💊</div>
+        <div class="mini-card-name">Витамин D3+K2</div>
+        <div class="mini-card-brand">PeakFit Lab</div>
+        <div class="mini-card-price">12€ (24лв)</div>
+      </div>
+
+      <!-- малка карта долу вляво -->
+      <div class="hero-float-card hero-float-bl">
+        <div class="mini-card-icon">👕</div>
+        <div class="mini-card-name">Dry-Fit тениска</div>
+        <div class="mini-card-brand">PeakFit Wear</div>
+        <div class="mini-card-price">23€ (45лв)</div>
+      </div>
+
+      <!-- тъмната карта с отзив -->
+      <div class="hero-float-card hero-float-rev">
+        <div class="float-rev-stars">★★★★★</div>
+        <div class="float-rev-text">"Най-добрият протеин, който съм пробвал!"</div>
+        <div class="float-rev-author">— Мартин Г.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="grid-overlay"></div>
+    <div class="stats-bar-inner">
+
+      <div class="stat-cell">
+        <div class="stat-cell-line"></div>
+        <span class="stat-num">500<span class="accent">+</span></span>
+        <span class="stat-label">Продукта</span>
+      </div>
+
+      <div class="stat-cell">
+        <div class="stat-cell-line"></div>
+        <span class="stat-num">98<span class="accent">%</span></span>
+        <span class="stat-label">Доволни клиенти</span>
+      </div>
+
+      <div class="stat-cell">
+        <div class="stat-cell-line"></div>
+        <span class="stat-num"><span class="accent">0</span>g</span>
+        <span class="stat-label">Изкуствени добавки</span>
+      </div>
+
+      <div class="stat-cell stat-cell-last">
+        <div class="stat-cell-line"></div>
+        <span class="stat-num">30к<span class="accent">+</span></span>
+        <span class="stat-label">Поръчки</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- секция с категориите -->
+<section class="sec cats-sec">
+  <div class="sec-blob"></div>
+  <div class="con">
+
+    <div class="text-center mb-12">
+      <span class="sec-tag">Разгледай всички</span>
+      <h2 class="sec-h2">Категории</h2>
+      <p class="sec-muted">Всичко за твоя фитнес живот</p>
+    </div>
+
+    <div class="cats-grid">
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-blue"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1612187945803-6e09c1f1e0a2?w=300&q=80" class="cat-img" alt="Протеини" onerror="this.src='https://picsum.photos/seed/protein/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Протеини</div>
+        <div class="cat-card-sub">Whey, Casein, Vegan</div>
+        <div class="cat-btn cat-btn-blue">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-red"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=300&q=80" class="cat-img" alt="Витамини" onerror="this.src='https://picsum.photos/seed/vitamins/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Витамини & Минерали</div>
+        <div class="cat-card-sub">Vitamin D, Omega-3, Zinc</div>
+        <div class="cat-btn cat-btn-red">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-orange"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" class="cat-img" alt="Pre-Workout" onerror="this.src='https://picsum.photos/seed/preworkout/400/180'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Pre-Workout</div>
+        <div class="cat-card-sub">Енергия и фокус</div>
+        <div class="cat-btn cat-btn-orange">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-green"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80" class="cat-img" alt="Изгаряне" onerror="this.src='https://picsum.photos/seed/fatburn/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Изгаряне мазнини</div>
+        <div class="cat-card-sub">Fat burners, L-Carnitine</div>
+        <div class="cat-btn cat-btn-green">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-purple"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&q=80" class="cat-img" alt="Фитнес облекло" onerror="this.src='https://picsum.photos/seed/clothing/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Фитнес облекло</div>
+        <div class="cat-card-sub">Тениски, клинове, суитшъти</div>
+        <div class="cat-btn cat-btn-purple">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-amber"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=300&q=80" class="cat-img" alt="Принадлежности" onerror="this.src='https://picsum.photos/seed/accessories/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Принадлежности</div>
+        <div class="cat-card-sub">Ленти, ръкавици, шейкъри</div>
+        <div class="cat-btn cat-btn-amber">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-cyan"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?w=300&q=80" class="cat-img" alt="Креатин & Аминос" onerror="this.src='https://picsum.photos/seed/creatine/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Креатин & Аминос</div>
+        <div class="cat-card-sub">Creatine, BCAA, EAA</div>
+        <div class="cat-btn cat-btn-cyan">Виж →</div>
+      </a>
+
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-accent cat-accent-pink"></div>
+        <div class="cat-img-wrap"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&q=80" class="cat-img" alt="Здравословна храна" onerror="this.src='https://picsum.photos/seed/healthfood/300/140'"/><div class="cat-img-overlay"></div></div>
+        <div class="cat-card-title">Здравословна храна</div>
+        <div class="cat-card-sub">Протеинови барове, снакс</div>
+        <div class="cat-btn cat-btn-pink">Виж →</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- секция с топ продуктите -->
+<section class="sec bg-light-blue">
+  <div class="con">
+    <h2 class="sec-h2 text-center">Топ <span class="accent">продукти</span></h2>
+    <p class="sec-sub">Най-продаваните тази седмица</p>
+    <div class="tabs">
+      <div class="tab on">🏆 Всички</div>
+      <div class="tab">🥛 Протеини</div>
+      <div class="tab">💊 Витамини</div>
+      <div class="tab">👕 Облекло</div>
+      <div class="tab">🥊 Принадлежности</div>
+    </div>
+    <div class="prods-grid" id="featuredProducts">
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/wheyprotein/400/180'" alt="Whey Protein"/><span class="prod-badge badge-hot">Топ</span></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Lab</div>
+          <div class="prod-name">Whey Protein Gold Standard</div>
+          <div class="prod-desc">2кг • Шоколад, Ванилия, Ягода</div>
+          <div class="prod-foot">
+            <div class="prod-price"><span class="prod-old">109лв</span>46€ (89лв)</div>
+            <button class="prod-add" onclick="addToCart(1)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/vitamins/400/180'" alt="Vitamins"/><span class="prod-badge badge-new">Ново</span></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Lab</div>
+          <div class="prod-name">Витамин D3 + K2</div>
+          <div class="prod-desc">60 капсули • 5000 IU</div>
+          <div class="prod-foot">
+            <div class="prod-price">12€ (24лв)</div>
+            <button class="prod-add" onclick="addToCart(2)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/preworkout/400/180'" alt="Pre-Workout"/><span class="prod-badge badge-sale">-20%</span></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Lab</div>
+          <div class="prod-name">Pre-Workout Xtreme</div>
+          <div class="prod-desc">300г • Арбуз, Тропик</div>
+          <div class="prod-foot">
+            <div class="prod-price"><span class="prod-old">30€</span> 24€ <span class="prod-price-sub">(47лв)</span></div>
+            <button class="prod-add" onclick="addToCart(3)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/creatine/400/180'" alt="Creatine"/></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Lab</div>
+          <div class="prod-name">Creatine Monohydrate</div>
+          <div class="prod-desc">500г • Micronized</div>
+          <div class="prod-foot">
+            <div class="prod-price">17€ <span class="prod-price-sub">(34лв)</span></div>
+            <button class="prod-add" onclick="addToCart(4)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/tshirt/400/180'" alt="T-shirt"/><span class="prod-badge badge-new">Ново</span></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Wear</div>
+          <div class="prod-name">Dry-Fit тренировъчна тениска</div>
+          <div class="prod-desc">S, M, L, XL • 6 цвята</div>
+          <div class="prod-foot">
+            <div class="prod-price">23€ (45лв)</div>
+            <button class="prod-add" onclick="addToCart(5)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/leggings/400/180'" alt="Leggings"/></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Wear</div>
+          <div class="prod-name">Компресионен клин</div>
+          <div class="prod-desc">XS, S, M, L • 4 цвята</div>
+          <div class="prod-foot">
+            <div class="prod-price">33€ <span class="prod-price-sub">(65лв)</span></div>
+            <button class="prod-add" onclick="addToCart(6)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/gloves/400/180'" alt="Gloves"/><span class="prod-badge badge-sale">-15%</span></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Gear</div>
+          <div class="prod-name">Фитнес ръкавици Pro</div>
+          <div class="prod-desc">S/M, L/XL • Антихлъзгащи</div>
+          <div class="prod-foot">
+            <div class="prod-price"><span class="prod-old">20€</span> 17€ <span class="prod-price-sub">(33лв)</span></div>
+            <button class="prod-add" onclick="addToCart(7)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-img p-0"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&q=80" class="prod-img-cover" onerror="this.src='https://picsum.photos/seed/proteinbar/400/180'" alt="Protein bar"/></div>
+        <div class="prod-info">
+          <div class="prod-brand">PeakFit Food</div>
+          <div class="prod-name">Протеинов бар (12 бр.)</div>
+          <div class="prod-desc">21г протеин • Без захар</div>
+          <div class="prod-foot">
+            <div class="prod-price">18€ <span class="prod-price-sub">(36лв)</span></div>
+            <button class="prod-add" onclick="addToCart(8)">+ Добави</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center mt-10">
+      <a href="catalog.html" class="btn-outline-blue">Виж всички продукти →</a>
+    </div>
+  </div>
+</section>
+
+<!-- промо секция с таймера -->
+<section class="promo-sec">
+
+  <!-- декоративни кръгове на фона -->
+  <div class="promo-blob promo-blob-tl"></div>
+  <div class="promo-blob promo-blob-br"></div>
+  <!-- решетката на фона -->
+  <div class="grid-overlay"></div>
+
+  <div class="promo-inner">
+
+    <!-- лявата страна -->
+    <div>
+      <!-- активния badge -->
+      <div class="promo-live-tag">
+        <span class="promo-live-dot"></span>
+        <span class="promo-live-text">Ограничена оферта</span>
+      </div>
+
+      <h2 class="promo-h2">До <span class="accent">30% намаление</span><br>на протеини и добавки</h2>
+      <p class="promo-desc">Не изпускай шанса! Само за ограничено време — най-добрите добавки на най-ниски цени.</p>
+
+      <!-- характеристиките на промоцията -->
+      <div class="promo-chips">
+        <span class="promo-chip">🚚 Безплатна доставка</span>
+        <span class="promo-chip">✅ 100% оригинални</span>
+        <span class="promo-chip">↩️ Лесно връщане</span>
+      </div>
+
+      <a href="catalog.html" class="btn-primary">
+        Пазарувай сега
+        <span class="btn-icon-wrap">→</span>
+      </a>
+    </div>
+
+    <!-- десния блок с таймера -->
+    <div class="promo-right">
+      <p class="promo-countdown-label">Офертата изтича след</p>
+      <div class="promo-countdown-row">
+        <div class="promo-stat">
+          <span id="hours" class="promo-stat-num">11</span>
+          <small class="promo-stat-label">Часа</small>
+        </div>
+        <span class="promo-stat-num promo-stat-num-accent">:</span>
+        <div class="promo-stat">
+          <span id="minutes" class="promo-stat-num">37</span>
+          <small class="promo-stat-label">Минути</small>
+        </div>
+        <span class="promo-stat-num promo-stat-num-accent">:</span>
+        <div class="promo-stat">
+          <span id="seconds" class="promo-stat-num promo-stat-num-blue">22</span>
+          <small class="promo-stat-label">Секунди</small>
+        </div>
+      </div>
+      <!-- прогрес бар за наличностите -->
+      <div class="promo-progress-bar">
+        <div class="promo-progress-fill"></div>
+      </div>
+      <p class="promo-progress-text">68% от продуктите вече са изкупени</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- секция с партньорските марки -->
+<section class="brands">
+  <div class="brands-inner">
+    <span class="brand">OPTIMUM NUTRITION</span>
+    <span class="brand">MYPROTEIN</span>
+    <span class="brand">SCITEC</span>
+    <span class="brand">NUTREX</span>
+    <span class="brand own">PEAKFIT</span>
+  </div>
+</section>
+
+<!-- секция с отзивите от клиенти -->
+<section class="reviews-sec">
+  <div class="grid-overlay grid-overlay-subtle"></div>
+  <div class="reviews-blob"></div>
+
+  <div class="con">
+
+    <!-- заглавието на секцията -->
+    <div class="text-center mb-14">
+      <div class="sec-tag sec-tag-dark">
+        <span class="stars-sm">★★★★★</span>
+        <span class="sec-tag-text">4.9/5 средна оценка</span>
+      </div>
+      <h2 class="sec-h2 text-white">Клиентски <span class="accent">мнения</span></h2>
+      <p class="sec-muted sec-muted-dark">Реални резултати от реални хора</p>
+    </div>
+
+    <!-- картите с отзивите -->
+    <div class="reviews-grid">
+
+      <div class="rev-card">
+        <div class="rev-top-line"></div>
+        <div class="rev-header">
+          <div class="rev-stars">★★★★★</div>
+          <div class="rev-icon-wrap">💪</div>
+        </div>
+        <p class="rev-text">"Whey протеинът е невероятен! Вкусен, разтваря се перфектно и резултатите са видими след само 1 месец."</p>
+        <div class="rev-footer">
+          <div class="rev-avatar">М</div>
+          <div>
+            <div class="rev-author">Мартин Г.</div>
+            <div class="rev-date">Sofia • Фитнес 3 години</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card rev-card-accent">
+        <div class="rev-top-line"></div>
+        <div class="rev-badge">ТОП РЕВЮ</div>
+        <div class="rev-header">
+          <div class="rev-stars">★★★★★</div>
+          <div class="rev-icon-wrap rev-icon-wrap-strong">🏋️</div>
+        </div>
+        <p class="rev-text">"Поръчах витамини, pre-workout и ръкавици. Доставката е светкавична, а качеството е просто топ — препоръчвам!"</p>
+        <div class="rev-footer">
+          <div class="rev-avatar rev-avatar-purple">И</div>
+          <div>
+            <div class="rev-author">Ивана П.</div>
+            <div class="rev-date">Varna • CrossFit</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top-line"></div>
+        <div class="rev-header">
+          <div class="rev-stars">★★★★☆</div>
+          <div class="rev-icon-wrap">🥇</div>
+        </div>
+        <p class="rev-text">"Компресионните клини са страхотни — носят се удобно и не се разтягат дори след интензивна тренировка."</p>
+        <div class="rev-footer">
+          <div class="rev-avatar rev-avatar-green">С</div>
+          <div>
+            <div class="rev-author">Стефан Д.</div>
+            <div class="rev-date">Plovdiv • Бодибилдинг</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- числата с доверие долу -->
+    <div class="reviews-stats-row">
+      <div class="text-center">
+        <div class="reviews-stat-num">4.9<span class="accent">/5</span></div>
+        <div class="reviews-stat-label">Средна оценка</div>
+      </div>
+      <div class="rev-divider"></div>
+      <div class="text-center">
+        <div class="reviews-stat-num">2 500<span class="accent">+</span></div>
+        <div class="reviews-stat-label">Ревюта</div>
+      </div>
+      <div class="rev-divider"></div>
+      <div class="text-center">
+        <div class="reviews-stat-num">98<span class="accent">%</span></div>
+        <div class="reviews-stat-label">Препоръчват ни</div>
+      </div>
+      <div class="rev-divider"></div>
+      <div class="text-center">
+        <div class="reviews-stat-num">30к<span class="accent">+</span></div>
+        <div class="reviews-stat-label">Доволни клиенти</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-top-line"></div>
+  <div class="footer-newsletter">
+    <div class="footer-newsletter-inner">
+      <div>
+        <div class="nl-title">📧 Абонирай се за нюзлетър</div>
+        <div class="nl-sub">Получавай ексклузивни оферти и новини</div>
+      </div>
+      <div class="nl-row">
+        <input type="email" placeholder="твоят@имейл.com" class="nl-input"/>
+        <button class="nl-btn newsletter-btn" onclick="return false;" class="newsletter-btn">Абонирай се →</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <span class="footer-logo-txt">PEAK<span>FIT</span></span>
+      <p>Твоят партньор за фитнес резултати. Добавки, облекло и принадлежности с доказано качество от 2010 г.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">За нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        <li><a href="cart.html">Количка</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакти</h4>
+      <ul>
+        <li>📍 бул. Фитнес 12, Варна</li>
+        <li>📞 +359 52 123 456</li>
+        <li>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6bfb8b0b996a6b3b7bdb0bfa2f8b4b1">[email&#160;protected]</a></li>
+        <li>🕐 Пон–Съб: 09:00–20:00</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Следвай ни</h4>
+      <a href="#" class="footer-social-btn"><span>📘</span><span>Facebook</span></a>
+      <a href="#" class="footer-social-btn"><span>📸</span><span>Instagram</span></a>
+      <a href="#" class="footer-social-btn"><span>▶️</span><span>YouTube</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 PeakFit. Всички права запазени.</span>
+    <div class="footer-links">
+      <a href="#">Политика за поверителност</a>
+      <a href="#">Условия за ползване</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Количка | PeakFit</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- навигация -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PEAK<span>FIT</span></a>
+  <div class="nav-pill">
+    <a href="index.html">Начало</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="about.html">За нас</a>
+    <a href="contact.html">Контакти</a>
+  </div>
+  <a href="cart.html" class="nav-cart on">🛒 Количка <span class="nav-badge" id="cartBadge">0</span></a>
+</nav>
+
+<!-- hero секцията -->
+<section class="cart-hero">
+  <div class="cart-hero-inner">
+    <div class="breadcrumb-row">
+      <a href="index.html">Начало</a>
+      <span>›</span>
+      <a href="catalog.html">Каталог</a>
+      <span>›</span>
+      <span>Количка</span>
+    </div>
+    <h1>Моята <span>количка</span></h1>
+  </div>
+</section>
+
+<!-- съдържанието на количката -->
+<section class="cart-sec">
+  <div class="con pb-12">
+    <div class="cart-grid" id="cartGrid">
+
+      <!-- лявата колона с продуктите -->
+      <div class="cart-items-wrap">
+
+        <!-- съобщение когато количката е празна -->
+        <div class="cart-empty" id="cartEmpty">
+          <div class="cart-empty-icon">🛒</div>
+          <h2>Количката е празна</h2>
+          <p>Добави продукти от каталога и те ще се появят тук.</p>
+          <a href="catalog.html" class="btn-primary">Разгледай каталога →</a>
+        </div>
+
+        <!-- списъка с продуктите -->
+        <div id="cartItemsList" style="display:none;">
+          <div class="cart-items-header">
+            <span>Продукт</span>
+            <span>Цена</span>
+            <span>Количество</span>
+            <span>Общо</span>
+            <span></span>
+          </div>
+          <div id="cartItems"></div>
+        </div>
+
+        <!-- бутон за продължаване на пазаруването -->
+        <div class="cart-continue" id="cartContinue" style="display:none;">
+          <a href="catalog.html" class="cart-back-btn">← Продължи пазаруването</a>
+          <button class="cart-clear-btn" onclick="clearCart()">🗑 Изчисти количката</button>
+        </div>
+
+      </div>
+
+      <!-- дясната колона с обобщението -->
+      <div class="cart-summary" id="cartSummary" style="display:none;">
+        <div class="cs-header">
+          <h3>Обобщение</h3>
+        </div>
+
+        <div class="cs-body">
+          <!-- полето за промо код -->
+          <div class="cs-promo">
+            <label class="cs-label">Промо код</label>
+            <div class="cs-promo-row">
+              <input type="text" class="cs-promo-input" id="promoInput" placeholder="Въведи код..."/>
+              <button class="cs-promo-btn" onclick="applyPromo()">Приложи</button>
+            </div>
+            <div class="cs-promo-msg" id="promoMsg"></div>
+          </div>
+
+          <div class="cs-divider"></div>
+
+          <!-- сумите -->
+          <div class="cs-row"><span>Продукти</span><span id="csSubtotal">0€</span></div>
+          <div class="cs-row" id="csDiscountRow" style="display:none;color:#00c48c;"><span>Отстъпка</span><span id="csDiscount"></span></div>
+          <div class="cs-row"><span>Доставка</span><span id="csDelivery">Безплатна</span></div>
+          <div class="cs-divider"></div>
+          <div class="cs-row cs-total"><span>Общо</span><span id="csTotal">0€</span></div>
+
+          <!-- прогрес бар за безплатна доставка -->
+          <div class="cs-free-delivery" id="csFreeDelivery">
+            <div class="cs-fd-text">До безплатна доставка: <strong id="csFdLeft">0€</strong></div>
+            <div class="cs-fd-bar"><div class="cs-fd-fill" id="csFdFill"></div></div>
+          </div>
+
+          <button class="cs-checkout-btn" onclick="checkout()">
+            Продължи към плащане →
+          </button>
+
+          <!-- иконките за доверие -->
+          <div class="cs-trust">
+            <div class="cs-trust-item">🔒 Сигурно плащане</div>
+            <div class="cs-trust-item">🚚 Доставка 1-2 дни</div>
+            <div class="cs-trust-item">↩️ 14 дни връщане</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- препоръчани продукти -->
+    <div class="cart-recommended" id="cartRecommended" style="display:none;">
+      <h2 class="sec-title text-left mb-6">Може да харесаш <span class="accent">също</span></h2>
+      <div class="cart-rec-grid" id="cartRecGrid"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="footer-top-line"></div>
+  <div class="footer-newsletter">
+    <div class="footer-newsletter-inner">
+      <div>
+        <div class="nl-title">📧 Абонирай се за нюзлетър</div>
+        <div class="nl-sub">Получавай ексклузивни оферти и новини</div>
+      </div>
+      <div class="nl-row">
+        <input type="email" placeholder="твоят@имейл.com" class="nl-input"/>
+        <button class="nl-btn newsletter-btn" onclick="return false;" class="newsletter-btn">Абонирай се →</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <span class="footer-logo-txt">PEAK<span>FIT</span></span>
+      <p>Твоят партньор за фитнес резултати. Добавки, облекло и принадлежности с доказано качество от 2010 г.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">За нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакти</h4>
+      <ul>
+        <li>📍 бул. Фитнес 12, Варна</li>
+        <li>📞 +359 52 123 456</li>
+        <li>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d24232b220d3d282c262b2439632f2a">[email&#160;protected]</a></li>
+        <li>🕐 Пон–Съб: 09:00–20:00</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Следвай ни</h4>
+      <a href="#" class="footer-social-btn"><span>📘</span><span>Facebook</span></a>
+      <a href="#" class="footer-social-btn"><span>📸</span><span>Instagram</span></a>
+      <a href="#" class="footer-social-btn"><span>▶️</span><span>YouTube</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 PeakFit. Всички права запазени.</span>
+    <div class="footer-links">
+      <a href="#">Политика за поверителност</a>
+      Условия за ползване</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
