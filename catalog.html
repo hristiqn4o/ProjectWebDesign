@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -288,4 +289,296 @@
 
 <script src="main.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог | PeakFit</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PEAK<span>FIT</span></a>
+  <div class="nav-pill">
+    <a href="index.html">Начало</a>
+    <a href="catalog.html" class="on">Каталог</a>
+    <a href="about.html">За нас</a>
+    <a href="contact.html">Контакти</a>
+  </div>
+  <a href="cart.html" class="nav-cart">🛒 Количка <span class="nav-badge" id="cartBadge">0</span></a>
+</nav>
+
+<div class="page-header">
+  <div class="ph-blob2"></div>
+  <div class="ph-blob3"></div>
+  <div class="page-header-inner">
+
+    <!-- хлебни трохи -->
+    <div class="ph-breadcrumb-row">
+      <div class="breadcrumb">
+        <a href="index.html">Начало</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Каталог</span>
+      </div>
+    </div>
+
+    <!-- основното съдържание на header-а -->
+    <div class="ph-main">
+      <div class="ph-left">
+        <div class="ph-tag">
+          <span class="ph-tag-dot"></span>
+          <span>112 продукта в наличност</span>
+        </div>
+        <h1 class="ph-title">Открий своите<br><span>перфектни добавки</span></h1>
+        <p class="ph-subtitle">Протеини, витамини, облекло и принадлежности — всичко необходимо за твоя фитнес живот.</p>
+
+        <!-- търсачката -->
+        <div class="ph-search-wrap">
+          <span class="ph-search-icon">🔍</span>
+          <input type="text" class="ph-search" placeholder="Търси продукт, марка или категория..." id="phSearch" oninput="searchProducts(this.value)"/>
+          <button class="ph-search-btn">Търси</button>
+        </div>
+
+        <div class="ph-divider"></div>
+        <div class="ph-stats-row">
+          <div class="ph-stat-item">
+            <span class="ph-stat-n">40+</span>
+            <span class="ph-stat-l">Продукта</span>
+          </div>
+          <div class="ph-stat-sep"></div>
+          <div class="ph-stat-item">
+            <span class="ph-stat-n">8</span>
+            <span class="ph-stat-l">Категории</span>
+          </div>
+          <div class="ph-stat-sep"></div>
+          <div class="ph-stat-item">
+            <span class="ph-stat-n accent">30%</span>
+            <span class="ph-stat-l">Намаление</span>
+          </div>
+          <div class="ph-stat-sep"></div>
+          <div class="ph-stat-item">
+            <span class="ph-stat-n">4.8★</span>
+            <span class="ph-stat-l">Оценка</span>
+          </div>
+        </div>
+      </div>
+      <div class="ph-right">
+        <div class="ph-visual">
+          <div class="ph-vis-ring ph-vis-ring1"></div>
+          <div class="ph-vis-ring ph-vis-ring2"></div>
+          <div class="ph-vis-ring ph-vis-ring3"></div>
+          <div class="ph-vis-center">
+            <span class="ph-vis-icon">💊</span>
+            <span class="ph-vis-icon">🥛</span>
+            <span class="ph-vis-icon">👕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- бързите филтри над продуктите -->
+    <div class="ph-chips">
+      <span class="ph-chip on" onclick="quickFilter('all',this)">Всички</span>
+      <span class="ph-chip" onclick="quickFilter('Протеини',this)">🥛 Протеини</span>
+      <span class="ph-chip" onclick="quickFilter('Витамини',this)">💊 Витамини</span>
+      <span class="ph-chip" onclick="quickFilter('Pre-Workout',this)">⚡ Pre-Workout</span>
+      <span class="ph-chip" onclick="quickFilter('Облекло',this)">👕 Облекло</span>
+      <span class="ph-chip" onclick="quickFilter('Принадлеж.',this)">🥊 Принадлежности</span>
+      <span class="ph-chip sale-chip" onclick="quickFilterSale(this)">🔥 Намалени</span>
+    </div>
+
+  </div>
+  <div class="ph-line"></div>
+</div>
+
+<div class="catalog-wrap">
+  <aside class="sidebar">
+    <div class="sidebar-title">Филтри <span onclick="clearFilters()">Изчисти всички</span></div>
+
+    <div class="filter-group">
+      <div class="filter-label">Категория</div>
+      <label class="filter-check"><input type="checkbox" data-cat="Протеини" checked> Протеини <span class="cnt">9</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Витамини" checked> Витамини <span class="cnt">8</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Pre-Workout" checked> Pre-Workout <span class="cnt">3</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Изгаряне" checked> Изгаряне мазнини <span class="cnt">3</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Облекло" checked> Облекло <span class="cnt">7</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Принадлеж." checked> Принадлежности <span class="cnt">6</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Аминос" checked> Аминокиселини <span class="cnt">3</span></label>
+      <label class="filter-check"><input type="checkbox" data-cat="Храна" checked> Здравословна храна <span class="cnt">3</span></label>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-label">Цена</div>
+      <div class="flex-gap-sm">
+        <input type="number" id="minPriceInput" placeholder="Мин" min="0" max="300" value="0"
+          class="price-input"
+          oninput="syncPrice()"/>
+        <input type="number" id="maxPriceInput" placeholder="Макс" min="0" max="300" value="300"
+          class="price-input"
+          oninput="syncPrice()"/>
+      </div>
+      <input type="range" class="price-slider" id="priceSlider" min="0" max="300" value="300" oninput="syncPriceFromSlider()"/>
+      <div class="price-range-vals"><span>0 лв.</span><span>До <b id="maxPrice">300</b> лв. <span class="text-muted-xs">(~<span id="maxPriceEur">153.38</span>€)</span></span></div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-label">Марка</div>
+      <label class="filter-check"><input type="checkbox" data-brand="PeakFit Lab" checked> PeakFit Lab <span class="cnt">22</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="PeakFit Wear" checked> PeakFit Wear <span class="cnt">7</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="PeakFit Gear" checked> PeakFit Gear <span class="cnt">6</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="PeakFit Food" checked> PeakFit Food <span class="cnt">3</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="Optimum Nutrition" checked> Optimum Nutrition <span class="cnt">10</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="MyProtein" checked> MyProtein <span class="cnt">11</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="Scitec Nutrition" checked> Scitec Nutrition <span class="cnt">6</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="GymBeam" checked> GymBeam <span class="cnt">18</span></label>
+      <label class="filter-check"><input type="checkbox" data-brand="Proof Nutrition" checked> Proof Nutrition <span class="cnt">7</span></label>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-label">Оценка</div>
+      <label class="filter-check"><input type="radio" name="rating" value="0" checked> Всички</label>
+      <label class="filter-check"><input type="radio" name="rating" value="5"> ★★★★★ само</label>
+      <label class="filter-check"><input type="radio" name="rating" value="4"> ★★★★☆ и нагоре</label>
+      <label class="filter-check"><input type="radio" name="rating" value="3"> ★★★☆☆ и нагоре</label>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-label">Намаление</div>
+      <label class="filter-check"><input type="checkbox" id="chkSale"> Само намалени продукти</label>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-label">Наличност</div>
+      <label class="filter-check"><input type="checkbox" id="chkStock"> Само в наличност</label>
+    </div>
+
+    <button class="apply-btn" onclick="applyFilters()">🔍 Приложи филтрите</button>
+  </aside>
+
+  <div>
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <span class="results-count">Показани: <b id="resultCount">24</b> продукта</span>
+      </div>
+      <div class="toolbar-row">
+        <div class="sort-wrap">
+          <label class="text-muted-sm">Сортирай:</label>
+          <select class="sort-select" id="sortSel" onchange="applyFilters()">
+            <option value="default">По подразбиране</option>
+            <option value="price-asc">Цена ↑</option>
+            <option value="price-desc">Цена ↓</option>
+            <option value="name">По азбучен ред</option>
+            <option value="rating">По оценка</option>
+          </select>
+        </div>
+        <div class="view-btns">
+          <button class="view-btn on" id="btnGrid" onclick="setView('grid')" title="Решетка">⊞</button>
+          <button class="view-btn" id="btnList" onclick="setView('list')" title="Списък">☰</button>
+          <button class="view-btn" id="btnTable" onclick="setView('table')" title="Таблица">⊟</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="prodsContainer"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</div>
+
+<!-- модален прозорец за детайли на продукта -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-inner">
+      <div class="modal-img-wrap" id="modalImgWrap">
+        <img id="modalImgSrc" src="" alt=""/>
+        <span class="modal-badge" id="modalBadge" style="display:none;"></span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-brand" id="modalBrand"></div>
+        <div class="modal-name" id="modalName"></div>
+        <div class="modal-rating">
+          <span class="modal-stars" id="modalStars"></span>
+          <span class="modal-rating-txt" id="modalRatingTxt"></span>
+        </div>
+        <div id="modalStock"></div>
+        <div class="modal-price-row">
+          <span class="modal-price" id="modalPrice"></span>
+          <span class="modal-old-price" id="modalOldPrice" style="display:none;"></span>
+          <span class="modal-discount" id="modalDiscount" style="display:none;"></span>
+        </div>
+        <div class="modal-tabs">
+          <div class="modal-tab on" onclick="switchModalTab('desc',this)">Описание</div>
+          <div class="modal-tab" onclick="switchModalTab('specs',this)">Характеристики</div>
+        </div>
+        <div id="modalTabDesc"><div class="modal-desc-full" id="modalDesc"></div></div>
+        <div id="modalTabSpecs" style="display:none;"><div class="modal-specs" id="modalSpecs"></div></div>
+        <div class="modal-actions">
+          <button class="modal-add-btn" id="modalAddBtn">🛒 Добави в количката</button>
+          <button class="modal-fav-btn">♡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-top-line"></div>
+  <div class="footer-newsletter">
+    <div class="footer-newsletter-inner">
+      <div>
+        <div class="nl-title">📧 Абонирай се за нюзлетър</div>
+        <div class="nl-sub">Получавай ексклузивни оферти и новини</div>
+      </div>
+      <div class="nl-row">
+        <input type="email" placeholder="твоят@имейл.com" class="nl-input"/>
+        <button class="nl-btn newsletter-btn" onclick="return false;" class="newsletter-btn">Абонирай се →</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <span class="footer-logo-txt">PEAK<span>FIT</span></span>
+      <p>Твоят партньор за фитнес резултати. Добавки, облекло и принадлежности с доказано качество от 2010 г.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">За нас</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        <li><a href="cart.html">Количка</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакти</h4>
+      <ul>
+        <li>📍 бул. Фитнес 12, Варна</li>
+        <li>📞 +359 52 123 456</li>
+        <li>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="11787f777e516174707a7778653f7376">[email&#160;protected]</a></li>
+        <li>🕐 Пон–Съб: 09:00–20:00</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Следвай ни</h4>
+      <a href="#" class="footer-social-btn"><span>📘</span><span>Facebook</span></a>
+      <a href="#" class="footer-social-btn"><span>📸</span><span>Instagram</span></a>
+      <a href="#" class="footer-social-btn"><span>▶️</span><span>YouTube</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 PeakFit. Всички права запазени.</span>
+    <div class="footer-links">
+      <a href="#">Политика за поверителност</a>
+      Условия за ползване</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+>>>>>>> c2fed3ce33b4eebb61a423bd4dfb242ec4863034
 </html>
