@@ -1,3 +1,6 @@
+// main.js - основния JS файл за целия сайт
+// тук са всички функции - количка, каталог, контакти и т.н.
+
 // функции за количката
 
 // масив с всички продукти
@@ -725,3 +728,33 @@ function initNewsletter(){
     });
   });
 }
+
+// хамбургер меню за мобилни устройства
+function initHamburger(){
+  const burger = document.querySelector('.nav-burger');
+  const mobileMenu = document.querySelector('.nav-mobile');
+  if(!burger || !mobileMenu) return;
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  // затваряне при клик върху линк
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // затваряне при клик извън менюто
+  document.addEventListener('click', (e) => {
+    if(!burger.contains(e.target) && !mobileMenu.contains(e.target)){
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initHamburger);
